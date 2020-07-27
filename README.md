@@ -1,9 +1,9 @@
 [![Swift v5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
-[![Cocoapods](https://img.shields.io/cocoapods/p/:spec)
-[![Issues](https://img.shields.io/github/issues/JMCPH/JMForms)
-[![Forks](https://img.shields.io/github/forks/JMCPH/JMForms)
-[![Stars](https://img.shields.io/github/stars/JMCPH/JMForms)
-[![Downloads](https://img.shields.io//github/downloads/:user/:repo/total)
+![Cocoapods](https://img.shields.io/cocoapods/p/:spec)
+![Issues](https://img.shields.io/github/issues/JMCPH/JMForms)
+![Forks](https://img.shields.io/github/forks/JMCPH/JMForms)
+![Stars](https://img.shields.io/github/stars/JMCPH/JMForms)
+![Downloads](https://img.shields.io/github/downloads/JMCPH/JMForms/total)
 
 # JMForms
 
