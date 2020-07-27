@@ -31,7 +31,7 @@ open class JMFormViewController: UITableViewController {
     public func setupForm(withSections sections: [JMFormSection]) {
         
         // JMForm - Register all the form cells for this tableview
-        JMFormItemCellType.registerCells(for: tableView)
+        JMFormCellType.registerCells(for: tableView)
         
         // Setup keyboard observers
         setupKeyboardObservers()
@@ -84,9 +84,9 @@ open class JMFormViewController: UITableViewController {
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
 
         if notification.name == UIResponder.keyboardWillHideNotification {
-            tableView.contentInset = .init(top: 15, left: 0, bottom: 15, right: 0)
+            tableView.contentInset = .init(top: 65, left: 0, bottom: 15, right: 0)
         } else {
-            tableView.contentInset = .init(top: 0, left: 0, bottom: (keyboardViewEndFrame.height + 20) - view.safeAreaInsets.bottom, right: 0)
+            tableView.contentInset = .init(top: 50, left: 0, bottom: (keyboardViewEndFrame.height / 2) - view.safeAreaInsets.bottom, right: 0)
         }
 
         tableView.scrollIndicatorInsets = tableView.contentInset
@@ -128,12 +128,14 @@ open class JMFormViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerTitle = form.sections[section].title else { return UIView() }
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? JMFormSectionHeaderView else { return nil }
-        header.titleLabel.text = form.sections[section].title
+        header.titleLabel.text = headerTitle
         return header
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard form.sections[section].title != nil else { return 1 }
         return 20
     }
     

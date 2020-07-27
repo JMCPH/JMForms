@@ -48,8 +48,8 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         textField.heightAnchor.constraint(greaterThanOrEqualToConstant: 45).isActive = true
-        textField.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        textField.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        textField.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 25).isActive = true
+        textField.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -25).isActive = true
         textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
     }
     
@@ -118,7 +118,12 @@ extension JMFormTextFieldCell: JMFormUpdatable {
         self.setupTextFieldUI()
         
         // Setup the subclass cell
-        self.setup()
+        switch item.cellType {
+            case .textfield(let type):
+                self.setupTextField(withType: type)
+            
+            default: break
+        }
         
     }
     
@@ -131,3 +136,85 @@ extension JMFormTextFieldCell: JMFormItemDelegate {
     }
     
 }
+
+
+// MARK: - Setup e-mail textfield
+
+extension JMFormTextFieldCell {
+    
+    private func setupTextField(withType type: JMFormItemType?) {
+        guard let type = type else { return }
+        
+        switch type {
+        
+        case .firstName:
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .words
+            textField.keyboardType = .asciiCapable
+            textField.textContentType = .givenName
+            
+        case .lastName:
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .words
+            textField.keyboardType = .asciiCapable
+            textField.textContentType = .familyName
+            
+        case .email:
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .none
+            textField.keyboardType = .emailAddress
+            textField.textContentType = .emailAddress
+            
+        case .password:
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .none
+            textField.keyboardType = .asciiCapable
+            textField.isSecureTextEntry = true
+            textField.textContentType = .password
+            
+        case .newPassword:
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .none
+            textField.keyboardType = .asciiCapable
+            textField.isSecureTextEntry = true
+            textField.textContentType = .newPassword
+            
+        case .phone:
+            textField.keyboardType = .phonePad
+            textField.textContentType = .telephoneNumber
+            
+        case .postalCode:
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .allCharacters
+            textField.keyboardType = .numbersAndPunctuation
+            textField.textContentType = .postalCode
+            
+        default: break
+        }
+        
+    }
+    
+    
+//
+// NOT USED AT THE  MOMENT - These functions are used to add a toolbar on top of the keyboard without a return button
+//
+    
+//    private func addToolbarToTextField() {
+//        let numberToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+//        numberToolbar.barStyle = .default
+//        numberToolbar.tintColor = .blue
+//        numberToolbar.barTintColor = .white
+//        numberToolbar.items = [
+//            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+//            UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(doneWithKeyboard))]
+//        numberToolbar.sizeToFit()
+//        self.textField.inputAccessoryView = numberToolbar
+//    }
+//
+//    @objc private func doneWithKeyboard() {
+//        textField.resignFirstResponder()
+//        textField.delegate?.textFieldDidEndEditing!(textField)
+//    }
+    
+}
+

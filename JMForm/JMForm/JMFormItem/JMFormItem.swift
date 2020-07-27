@@ -17,6 +17,18 @@ public protocol JMFormItemDelegate {
     func setAsFirstResponder()
 }
 
+/// Different types of items supported by JMForm
+public enum JMFormItemType {
+    case firstName
+    case lastName
+    case email
+    case password
+    case newPassword
+    case age
+    case postalCode
+    case phone
+}
+
 /// ViewModel to display and react to text events, to update data
 public class JMFormItem {
     
@@ -26,7 +38,7 @@ public class JMFormItem {
     public var tag: String
     
     /// The type of cell this form item should use
-    public let cellType: JMFormItemCellType?
+    public let cellType: JMFormCellType?
     
     /// The value of the item - is calling valueCompletion() with the new value - important to be
     private var value: Any? {
@@ -53,20 +65,20 @@ public class JMFormItem {
     public var delegate: JMFormItemDelegate?
     
     /// Validation of the item
-    private var isMandatory = false
-    private var validationErrorText: String?
+    private(set) var isRequired: Bool
     
     /// UI Properties of the item
     public var uiProperties = JMFormItemUIProperties()
     
     // Initalization of the JMFormItem
-    public init(tag: String, cellType: JMFormItemCellType, titleText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator?) {
+    public init(tag: String, cellType: JMFormCellType, titleText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator?, isRequired: Bool = true) {
         self.tag = tag
         self.cellType = cellType
         self.uiProperties.titleText = titleText
         self.uiProperties.placeholderText = placeholderText
         self.value = value
         self.validator = validator
+        self.isRequired = true
     }
     
     public func setOptions(options: [Any]?) {
@@ -77,8 +89,8 @@ public class JMFormItem {
         self.value = value
     }
     
-    public func getValue<T>() -> T {
-        return value as! T
+    public func getValue<T>() -> T? {
+        return value as? T
     }
 }
 

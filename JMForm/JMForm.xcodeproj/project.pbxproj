@@ -12,10 +12,6 @@
 		3637D86B24CC8C4100B34D73 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637D86A24CC8C4100B34D73 /* UIColor+Extensions.swift */; };
 		365478D724CDF15E00074C5D /* JMFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365478D624CDF15E00074C5D /* JMFormValidator.swift */; };
 		365478DF24CDFECD00074C5D /* JMFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365478DE24CDFECD00074C5D /* JMFormTableViewCell.swift */; };
-		365478E124CE076300074C5D /* JMFormItemEmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365478E024CE076300074C5D /* JMFormItemEmailCell.swift */; };
-		365478E324CE1E8900074C5D /* JMFormItemNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365478E224CE1E8900074C5D /* JMFormItemNameCell.swift */; };
-		365478E524CE1ED900074C5D /* JMFormItemIntCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365478E424CE1ED900074C5D /* JMFormItemIntCell.swift */; };
-		365478E724CE232E00074C5D /* JMFormItemPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365478E624CE232E00074C5D /* JMFormItemPasswordCell.swift */; };
 		366F5D5924C05ABE00F09D8F /* JMForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366F5D4F24C05ABE00F09D8F /* JMForm.framework */; };
 		366F5D5E24C05ABE00F09D8F /* JMFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5D5D24C05ABE00F09D8F /* JMFormTests.swift */; };
 		366F5D6024C05ABE00F09D8F /* JMForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 366F5D5224C05ABE00F09D8F /* JMForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,8 +23,6 @@
 		366F5D7A24C05AD600F09D8F /* JMFormItemCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5D7224C05AD600F09D8F /* JMFormItemCellType.swift */; };
 		366F5D7B24C05AD600F09D8F /* JMFormItemUIProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5D7324C05AD600F09D8F /* JMFormItemUIProperty.swift */; };
 		366F5D7C24C05AD600F09D8F /* JMFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5D7424C05AD600F09D8F /* JMFormSection.swift */; };
-		367C102C24CEC5470057774E /* JMFormItemPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C102B24CEC5470057774E /* JMFormItemPhoneCell.swift */; };
-		367C102E24CEC5EE0057774E /* JMFormItemZipCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C102D24CEC5EE0057774E /* JMFormItemZipCodeCell.swift */; };
 		367C103324CEC9250057774E /* JMFormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C103224CEC9250057774E /* JMFormSwitchCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,10 +42,6 @@
 		3637D86A24CC8C4100B34D73 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		365478D624CDF15E00074C5D /* JMFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormValidator.swift; sourceTree = "<group>"; };
 		365478DE24CDFECD00074C5D /* JMFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormTableViewCell.swift; sourceTree = "<group>"; };
-		365478E024CE076300074C5D /* JMFormItemEmailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemEmailCell.swift; sourceTree = "<group>"; };
-		365478E224CE1E8900074C5D /* JMFormItemNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemNameCell.swift; sourceTree = "<group>"; };
-		365478E424CE1ED900074C5D /* JMFormItemIntCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemIntCell.swift; sourceTree = "<group>"; };
-		365478E624CE232E00074C5D /* JMFormItemPasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemPasswordCell.swift; sourceTree = "<group>"; };
 		366F5D4F24C05ABE00F09D8F /* JMForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JMForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		366F5D5224C05ABE00F09D8F /* JMForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMForm.h; sourceTree = "<group>"; };
 		366F5D5324C05ABE00F09D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,8 +56,6 @@
 		366F5D7224C05AD600F09D8F /* JMFormItemCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItemCellType.swift; sourceTree = "<group>"; };
 		366F5D7324C05AD600F09D8F /* JMFormItemUIProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItemUIProperty.swift; sourceTree = "<group>"; };
 		366F5D7424C05AD600F09D8F /* JMFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSection.swift; sourceTree = "<group>"; };
-		367C102B24CEC5470057774E /* JMFormItemPhoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemPhoneCell.swift; sourceTree = "<group>"; };
-		367C102D24CEC5EE0057774E /* JMFormItemZipCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemZipCodeCell.swift; sourceTree = "<group>"; };
 		367C103224CEC9250057774E /* JMFormSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormSwitchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +136,7 @@
 			children = (
 				365478DE24CDFECD00074C5D /* JMFormTableViewCell.swift */,
 				367C103224CEC9250057774E /* JMFormSwitchCell.swift */,
-				367C102F24CEC6B70057774E /* JMFormTextFieldCells */,
+				366F5D6B24C05AD600F09D8F /* JMFormTextFieldCell.swift */,
 			);
 			path = JMFormCells;
 			sourceTree = "<group>";
@@ -170,20 +158,6 @@
 				366F5D7324C05AD600F09D8F /* JMFormItemUIProperty.swift */,
 			);
 			path = JMFormItem;
-			sourceTree = "<group>";
-		};
-		367C102F24CEC6B70057774E /* JMFormTextFieldCells */ = {
-			isa = PBXGroup;
-			children = (
-				366F5D6B24C05AD600F09D8F /* JMFormTextFieldCell.swift */,
-				365478E024CE076300074C5D /* JMFormItemEmailCell.swift */,
-				365478E624CE232E00074C5D /* JMFormItemPasswordCell.swift */,
-				365478E224CE1E8900074C5D /* JMFormItemNameCell.swift */,
-				365478E424CE1ED900074C5D /* JMFormItemIntCell.swift */,
-				367C102B24CEC5470057774E /* JMFormItemPhoneCell.swift */,
-				367C102D24CEC5EE0057774E /* JMFormItemZipCodeCell.swift */,
-			);
-			path = JMFormTextFieldCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,17 +272,11 @@
 				365478DF24CDFECD00074C5D /* JMFormTableViewCell.swift in Sources */,
 				366F5D7924C05AD600F09D8F /* JMFormItem.swift in Sources */,
 				3637D86624CC82E100B34D73 /* UITextField+Extensions.swift in Sources */,
-				367C102E24CEC5EE0057774E /* JMFormItemZipCodeCell.swift in Sources */,
 				3637D86924CC860300B34D73 /* JMFormSectionHeaderView.swift in Sources */,
-				367C102C24CEC5470057774E /* JMFormItemPhoneCell.swift in Sources */,
 				366F5D7524C05AD600F09D8F /* JMFormTextFieldCell.swift in Sources */,
 				366F5D7624C05AD600F09D8F /* JMFormViewController.swift in Sources */,
-				365478E724CE232E00074C5D /* JMFormItemPasswordCell.swift in Sources */,
 				365478D724CDF15E00074C5D /* JMFormValidator.swift in Sources */,
-				365478E324CE1E8900074C5D /* JMFormItemNameCell.swift in Sources */,
 				366F5D7824C05AD600F09D8F /* JMForm.swift in Sources */,
-				365478E524CE1ED900074C5D /* JMFormItemIntCell.swift in Sources */,
-				365478E124CE076300074C5D /* JMFormItemEmailCell.swift in Sources */,
 				367C103324CEC9250057774E /* JMFormSwitchCell.swift in Sources */,
 				366F5D7B24C05AD600F09D8F /* JMFormItemUIProperty.swift in Sources */,
 				366F5D7724C05AD600F09D8F /* JMFormValidation.swift in Sources */,

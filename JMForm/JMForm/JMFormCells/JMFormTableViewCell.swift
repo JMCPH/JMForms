@@ -24,12 +24,12 @@ class JMFormTableViewCell: UITableViewCell, JMFormCell {
     var delegate: JMFormCellDelegate?
     var item: JMFormItem?
     
-    func setup() {
-        
-        selectionStyle = .none
-        contentView.backgroundColor = .clear
-        backgroundColor = .clear
-        backgroundView?.backgroundColor = .clear
-        
-    }
+//    func setup() {
+//
+//        selectionStyle = .none
+//        contentView.backgroundColor = .clear
+//        backgroundColor = .clear
+//        backgroundView?.backgroundColor = .clear
+//
+//    }
 }

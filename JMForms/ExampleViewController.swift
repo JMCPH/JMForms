@@ -33,21 +33,22 @@ class ExampleViewController: JMFormViewController {
     }
     
     private func setupForm() {
-
-        // First name
-        let firstNameForm = JMFormItem(tag: "name", cellType: .name, placeholderText: "Enter your name", validator: .name)
-
-        // Email
-        let emailFormItem = JMFormItem(tag: "email", cellType: .email, placeholderText: "Enter your email", validator: .email)
-
-        // Password
-        let passwordFormItem = JMFormItem(tag: "password", cellType: .password, placeholderText: "Enter your password", validator: .password(minimumCount: 6))
         
-        // Age
-        let ageFormItem = JMFormItem(tag: "age", cellType: .int, placeholderText: "Enter your age", validator: .age)
-
+        let firstName = JMFormItem(tag: "firstName", cellType: .textfield(type: .firstName), placeholderText: "Enter your first name", validator: .name)
+        let lastName = JMFormItem(tag: "lastName", cellType: .textfield(type: .lastName), placeholderText: "Enter your last name", validator: .name)
+        let email = JMFormItem(tag: "email", cellType: .textfield(type: .email), placeholderText: "Enter your email", validator: .email)
+        let password = JMFormItem(tag: "password", cellType: .textfield(type: .newPassword), placeholderText: "Enter your password", validator: .password(minimumCount: 6))
+        let age = JMFormItem(tag: "age", cellType: .textfield(type: .age), placeholderText: "Enter your age", validator: .age)
+        let termsAndConditions = JMFormItem(tag: "terms", cellType: .switcher, titleText: "I accept the terms and conditions of using the JMForms example project.", validator: nil)
+        
         // Setup the sections for the form
-        let sections = [JMFormSection(items: [firstNameForm, emailFormItem, passwordFormItem, ageFormItem], title: "User information", isCollapsed: false)]
+        let sections = [JMFormSection(items: [firstName], title: "First name", isCollapsed: false),
+                        JMFormSection(items: [lastName], title: "Last name", isCollapsed: false),
+                        JMFormSection(items: [age], title: "Age", isCollapsed: false),
+                        JMFormSection(items: [email], title: "Email", isCollapsed: false),
+                        JMFormSection(items: [password], title: "Password", isCollapsed: false),
+                        JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)
+        ]
         
         setupForm(withSections: sections)
         

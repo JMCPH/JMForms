@@ -19,6 +19,12 @@ extension JMFormItem: JMFormValidable {
     
     public func validate() -> JMFormValidation {
         
+        // Validate only if the field is required.
+        guard isRequired else {
+            return .init(isValid: true, errorString: nil)
+        }
+        
+        // Validate the form item.
         switch validator {
         case .email:
             guard let email: String = getValue() else {

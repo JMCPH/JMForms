@@ -10,20 +10,16 @@ import UIKit
 import Foundation
 
 /// UI Cell Type to be displayed
-public enum JMFormItemCellType {
-    case email
-    case password
-    case name
-    case int
+public enum JMFormCellType {
+    case textfield(type: JMFormItemType?)
+    case switcher
     
     /// Registering methods for all forms items cell types
     ///
     /// - Parameter tableView: TableView where apply cells registration
     static func registerCells(for tableView: UITableView) {
-        tableView.register(JMFormItemEmailCell.self, forCellReuseIdentifier: "JMFormItemEmailCell")
-        tableView.register(JMFormItemNameCell.self, forCellReuseIdentifier: "JMFormItemNameCell")
-        tableView.register(JMFormItemIntCell.self, forCellReuseIdentifier: "JMFormItemIntCell")
-        tableView.register(JMFormItemPasswordCell.self, forCellReuseIdentifier: "JMFormItemPasswordCell")
+        tableView.register(JMFormTextFieldCell.self, forCellReuseIdentifier: "JMFormTextFieldCell")
+        tableView.register(JMFormSwitchCell.self, forCellReuseIdentifier: "JMFormSwitchCell")
     }
     
     /// Correctly dequeue the UITableViewCell according to the current cell type
@@ -35,18 +31,12 @@ public enum JMFormItemCellType {
     func dequeueCell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         
         switch self {
-        case .email:
-            return tableView.dequeueReusableCell(withIdentifier: "JMFormItemEmailCell", for: indexPath)
+        case .textfield:
+            return tableView.dequeueReusableCell(withIdentifier: "JMFormTextFieldCell", for: indexPath)
             
-        case .name:
-            return tableView.dequeueReusableCell(withIdentifier: "JMFormItemNameCell", for: indexPath)
-
-        case .int:
-            return tableView.dequeueReusableCell(withIdentifier: "JMFormItemIntCell", for: indexPath)
+        case .switcher:
+            return tableView.dequeueReusableCell(withIdentifier: "JMFormSwitchCell", for: indexPath)
             
-        case .password:
-            return tableView.dequeueReusableCell(withIdentifier: "JMFormItemPasswordCell", for: indexPath)
-        
         }
         
     }
