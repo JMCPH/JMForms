@@ -35,7 +35,7 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 
 ## Contributing
-
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are ``greatly appreciated``.
 1. Fork it (<https://github.com/JMCPH/JMForms/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
