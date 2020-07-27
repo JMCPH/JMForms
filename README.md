@@ -1,5 +1,9 @@
-[![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController-swift.svg)](http://cocoapods.org/pods/ESTabBarController-swift)
 [![Swift v5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Cocoapods](https://img.shields.io/cocoapods/p/:spec)
+[![Issues](https://img.shields.io/github/issues/JMCPH/JMForms)
+[![Forks](https://img.shields.io/github/forks/JMCPH/JMForms)
+[![Stars](https://img.shields.io/github/stars/JMCPH/JMForms)
+[![Downloads](https://img.shields.io//github/downloads/:user/:repo/total)
 
 # JMForms
 JMForms is a form builder written in Swift 📝 It is currently used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328)
@@ -9,7 +13,6 @@ JMForms is a form builder written in Swift 📝 It is currently used in the [Tii
 <br />
 
 ## Requirements
-
 * Xcode 10.2
 * iOS 12.0+
 
