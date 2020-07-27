@@ -4,7 +4,7 @@ JMForms is a form builder written in Swift 📝 It is currently used in the [Tii
 
 One to two paragraph statement about your product and what it does.
 
-![alt text](https://github.com/JMCPH/JMForms/blob/master/image.jpg?raw=true)
+![alt text](https://github.com/JMCPH/JMForms/blob/master/Screenshots/screenshot1.png?raw=true)
 
 ## Installation
 
