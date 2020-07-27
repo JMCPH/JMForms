@@ -40,7 +40,7 @@ A few motivating and useful examples of how your product can be used. Spice this
 
 ## Author
 
-🕴🏻 [Jakob Mikkelsen](https://github.com/JMCPH) - ```Founder and iOS developer at Codement Aps```<br />
+🕴🏻 [Jakob Mikkelsen](https://github.com/JMCPH)<br />
 📩 [Email](mailto:jpm@codement.dk?subject=[GitHub]%20JMForms)<br />
 🔗 [LinkedIn](https://www.linkedin.com/in/JMCPH)<br />
 🖥 [Website](www.codement.dk)
