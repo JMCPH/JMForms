@@ -1,9 +1,18 @@
+[![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController-swift.svg)](http://cocoapods.org/pods/ESTabBarController-swift)
+[![Swift v5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
+
 # JMForms
 JMForms is a form builder written in Swift 📝 It is currently used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328)
 
 ![alt text](https://github.com/JMCPH/JMForms/blob/master/Screenshots/screenshot1.png?raw=true)
 <br />
 <br />
+
+## Requirements
+
+* Xcode 10.2
+* iOS 12.0+
+
 
 ## Installation
 
@@ -16,6 +25,7 @@ For iOS, tvOS, macOS, and App Extension integrations:
 ```pod 'JMForms'```
 <br />
 <br />
+
 
 ## Usage example
 
@@ -42,6 +52,8 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
+<br />
+<br />
 
 
 ## Acknowledgements
