@@ -28,11 +28,12 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 ## Author
 
 Jakob Mikkelsen – [LinkedIn](https://www.linkedin.com/in/JMCPH)
-Founder and iOS developer @ [Codement](www.codement.dk)
-MSc in Software Development from the IT-University of Copenhagen
-BSc in Global Business Informatics from the IT-University of Copenhagen.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+Founder and iOS developer @ [Codement](www.codement.dk)
+
+MSc in Software Development from the IT-University of Copenhagen
+
+BSc in Global Business Informatics from the IT-University of Copenhagen.
 
 
 ## Contributing
