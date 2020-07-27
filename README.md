@@ -1,20 +1,19 @@
 # JMForms
 JMForms is a form builder written in Swift 📝 It is currently used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328)
 
-
-One to two paragraph statement about your product and what it does.
-
 ![alt text](https://github.com/JMCPH/JMForms/blob/master/Screenshots/screenshot1.png?raw=true)
+
 
 ## Installation
 
-## CocoaPods
+### CocoaPods
 
 JMForms supports CocoaPods for easy installation. To Install, see our swift integration guide »
 
 For iOS, tvOS, macOS, and App Extension integrations:
 
 ```pod 'JMForms'```
+
 
 
 ## Usage example
@@ -25,15 +24,12 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 
 
-## Author
+## Author - Available for hire!
 
-Jakob Mikkelsen – [LinkedIn](https://www.linkedin.com/in/JMCPH)
-
-Founder and iOS developer @ [Codement](www.codement.dk)
-
-MSc in Software Development from the IT-University of Copenhagen
-
-BSc in Global Business Informatics from the IT-University of Copenhagen.
+Jakob Mikkelsen - Founder and iOS developer at Codement Aps
+- [Email](mailto:jpm@codement.dk?subject=[GitHub]%20JMForms)
+- [LinkedIn](https://www.linkedin.com/in/JMCPH)
+- [Website](www.codement.dk)
 
 
 ## Contributing
