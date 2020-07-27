@@ -19,13 +19,13 @@ The framework is currently used in the [Tiimo | The ADHD & autism app](https://a
 
 ## Installation
 
-### CocoaPods
+### CocoaPods - Coming soon...
 
 JMForms supports CocoaPods for easy installation.<br />
 ```pod 'JMForms'```
 
 
-## Usage example - TODO: Write about how to use e.g. JMFormViewController
+## Usage example - Coming soon...
 
 A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
