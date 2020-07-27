@@ -6,6 +6,7 @@
 [![Downloads](https://img.shields.io//github/downloads/:user/:repo/total)
 
 # JMForms
+
 JMForms is a form builder written in Swift 5 📝 <br />
 The framework is currently used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328)
 
@@ -14,26 +15,23 @@ The framework is currently used in the [Tiimo | The ADHD & autism app](https://a
 <br />
 
 ## Requirements
+
 * Xcode 10.2
 * iOS 12.0+
 <br />
 <br />
 
-
 ## Installation
 
 ### CocoaPods
 
-JMForms supports CocoaPods for easy installation. To Install, see our swift integration guide »
-
-For iOS, tvOS, macOS, and App Extension integrations:
-
+JMForms supports CocoaPods for easy installation.<br />
 ```pod 'JMForms'```
 <br />
 <br />
 
 
-## Usage example
+## Usage example - TODO: Write about how to use e.g. JMFormViewController
 
 A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 <br />
