@@ -27,7 +27,7 @@ A few motivating and useful examples of how your product can be used. Spice this
 
 ## Author
 
-[Jakob Mikkelsen](https://github.com/JMCPH) - Founder and iOS developer at Codement Aps<br />
+🕴🏻 [Jakob Mikkelsen](https://github.com/JMCPH) - ```Founder and iOS developer at Codement Aps```<br />
 📩 [Email](mailto:jpm@codement.dk?subject=[GitHub]%20JMForms)<br />
 🔗 [LinkedIn](https://www.linkedin.com/in/JMCPH)<br />
 🖥 [Website](www.codement.dk)
@@ -42,8 +42,7 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
-<br />
-<br />
+
 
 ## Acknowledgements
 - [Eureka](https://github.com/xmartlabs/Eureka)
