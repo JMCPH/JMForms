@@ -26,6 +26,7 @@ extension JMFormItem: JMFormValidable {
         
         // Validate the form item.
         switch validator {
+            
         case .email:
             guard let email: String = getValue() else {
                 return .init(isValid: false, errorString: "Please type in an e-mail.")
@@ -34,6 +35,12 @@ extension JMFormItem: JMFormValidable {
             let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             let isValid = emailPred.evaluate(with: email)
             return .init(isValid: isValid, errorString: "Please type in a valid email.")
+            
+        case .equalEmail(let item):
+            guard let email: String = getValue(), let equalItemString: String = item.getValue() else {
+                return .init(isValid: false, errorString: "Emails does not match.")
+            }
+            return .init(isValid: email == equalItemString, errorString: "Emails does not match.")
             
         case .password(let minimumCount):
             guard let password: String = getValue() else {

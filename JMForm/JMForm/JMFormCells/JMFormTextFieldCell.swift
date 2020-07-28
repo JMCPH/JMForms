@@ -57,7 +57,6 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         super.prepareForReuse()
         textField.text = nil
         textField.attributedPlaceholder = nil
-        textField.layer.shadowColor = UIColor(r: 224, g: 224, b: 224, a: 0.5).cgColor
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -71,7 +70,7 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         // Remove placeholder if begin editing
         textField.placeholder = nil
         
-        // Add inactive border color
+        // Add active border color
         textField.layer.borderColor = item?.uiProperties.borderColorActive?.cgColor
     }
     

@@ -36,7 +36,9 @@ class ExampleViewController: JMFormViewController {
         
         let firstName = JMFormItem(tag: "firstName", cellType: .textfield(type: .firstName), placeholderText: "Enter your first name", validator: .name)
         let lastName = JMFormItem(tag: "lastName", cellType: .textfield(type: .lastName), placeholderText: "Enter your last name", validator: .name)
+        let biography = JMFormItem(tag: "biography", cellType: .textView, placeholderText: "Enter your bio", validator: nil)
         let email = JMFormItem(tag: "email", cellType: .textfield(type: .email), placeholderText: "Enter your email", validator: .email)
+        let confirmEmail = JMFormItem(tag: "confirmEmail", cellType: .textfield(type: .email), placeholderText: "Confirm your email", validator: .equalEmail(item: email))
         let password = JMFormItem(tag: "password", cellType: .textfield(type: .newPassword), placeholderText: "Enter your password", validator: .password(minimumCount: 6))
         let age = JMFormItem(tag: "age", cellType: .textfield(type: .age), placeholderText: "Enter your age", validator: .age)
         let termsAndConditions = JMFormItem(tag: "terms", cellType: .switcher, titleText: "I accept the terms and conditions of using the JMForms example project.", validator: nil)
@@ -44,11 +46,12 @@ class ExampleViewController: JMFormViewController {
         // Setup the sections for the form
         let sections = [JMFormSection(items: [firstName], title: "First name", isCollapsed: false),
                         JMFormSection(items: [lastName], title: "Last name", isCollapsed: false),
+                        JMFormSection(items: [biography], title: "Biography", isCollapsed: false),
                         JMFormSection(items: [age], title: "Age", isCollapsed: false),
                         JMFormSection(items: [email], title: "Email", isCollapsed: false),
+                        JMFormSection(items: [confirmEmail], title: "Confirm email", isCollapsed: false),
                         JMFormSection(items: [password], title: "Password", isCollapsed: false),
-                        JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)
-        ]
+                        JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)]
         
         setupForm(withSections: sections)
         

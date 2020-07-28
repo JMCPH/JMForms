@@ -24,6 +24,7 @@
 		366F5D7B24C05AD600F09D8F /* JMFormItemUIProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5D7324C05AD600F09D8F /* JMFormItemUIProperty.swift */; };
 		366F5D7C24C05AD600F09D8F /* JMFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5D7424C05AD600F09D8F /* JMFormSection.swift */; };
 		367C103324CEC9250057774E /* JMFormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C103224CEC9250057774E /* JMFormSwitchCell.swift */; };
+		36CF3FCA24D02C5A000BFBC9 /* JMFormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CF3FC924D02C5A000BFBC9 /* JMFormTextViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		366F5D7324C05AD600F09D8F /* JMFormItemUIProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItemUIProperty.swift; sourceTree = "<group>"; };
 		366F5D7424C05AD600F09D8F /* JMFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSection.swift; sourceTree = "<group>"; };
 		367C103224CEC9250057774E /* JMFormSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormSwitchCell.swift; sourceTree = "<group>"; };
+		36CF3FC924D02C5A000BFBC9 /* JMFormTextViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormTextViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				365478DE24CDFECD00074C5D /* JMFormTableViewCell.swift */,
 				367C103224CEC9250057774E /* JMFormSwitchCell.swift */,
 				366F5D6B24C05AD600F09D8F /* JMFormTextFieldCell.swift */,
+				36CF3FC924D02C5A000BFBC9 /* JMFormTextViewCell.swift */,
 			);
 			path = JMFormCells;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36CF3FCA24D02C5A000BFBC9 /* JMFormTextViewCell.swift in Sources */,
 				365478DF24CDFECD00074C5D /* JMFormTableViewCell.swift in Sources */,
 				366F5D7924C05AD600F09D8F /* JMFormItem.swift in Sources */,
 				3637D86624CC82E100B34D73 /* UITextField+Extensions.swift in Sources */,

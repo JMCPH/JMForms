@@ -12,6 +12,7 @@ import Foundation
 /// UI Cell Type to be displayed
 public enum JMFormCellType {
     case textfield(type: JMFormItemType?)
+    case textView
     case switcher
     
     /// Registering methods for all forms items cell types
@@ -19,6 +20,7 @@ public enum JMFormCellType {
     /// - Parameter tableView: TableView where apply cells registration
     static func registerCells(for tableView: UITableView) {
         tableView.register(JMFormTextFieldCell.self, forCellReuseIdentifier: "JMFormTextFieldCell")
+        tableView.register(JMFormTextViewCell.self, forCellReuseIdentifier: "JMFormTextViewCell")
         tableView.register(JMFormSwitchCell.self, forCellReuseIdentifier: "JMFormSwitchCell")
     }
     
@@ -33,10 +35,10 @@ public enum JMFormCellType {
         switch self {
         case .textfield:
             return tableView.dequeueReusableCell(withIdentifier: "JMFormTextFieldCell", for: indexPath)
-            
+        case .textView:
+            return tableView.dequeueReusableCell(withIdentifier: "JMFormTextViewCell", for: indexPath)
         case .switcher:
             return tableView.dequeueReusableCell(withIdentifier: "JMFormSwitchCell", for: indexPath)
-            
         }
         
     }

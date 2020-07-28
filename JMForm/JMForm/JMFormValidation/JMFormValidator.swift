@@ -9,6 +9,7 @@
 // Types of validation JMForm can perform
 public enum JMFormValidator {
     case email
+    case equalEmail(item: JMFormItem)
     case name
     case age
     case password(minimumCount: Int)
