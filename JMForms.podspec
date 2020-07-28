@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
   s.swift_version = ['5.0', '5.1', '5.2']
+  s.platform = :ios
 
   s.source_files = 'JMForms/Classes/**/*'
   
