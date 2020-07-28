@@ -1,0 +1,16 @@
+PODS:
+  - JMForms (0.1.0)
+
+DEPENDENCIES:
+  - JMForms (from `../`)
+
+EXTERNAL SOURCES:
+  JMForms:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JMForms: 825068742622e3b144e8edd96f7af2af509a0636
+
+PODFILE CHECKSUM: 5aa31d2fe77611ff4a5ea8deb8bd6787de81864a
+
+COCOAPODS: 1.9.3

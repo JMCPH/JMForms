@@ -1,0 +1,6 @@
+framework module Pods_JMForms_Tests {
+  umbrella header "Pods-JMForms_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "JMForms",
+  "version": "0.1.0",
+  "summary": "A short description of JMForms.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Jakob Mikkelsen/JMForms",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jakob Mikkelsen": "jpm@codement.dk"
+  },
+  "source": {
+    "git": "https://github.com/Jakob Mikkelsen/JMForms.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JMForms/Classes/**/*"
+}

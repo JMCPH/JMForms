@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JMForms_Example' do
+  pod 'JMForms', :path => '../'
+
+  target 'JMForms_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
