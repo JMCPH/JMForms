@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2FD9053FC4525F131D556C4C9CACC1CA"
-               BuildableName = "JMForms.framework"
-               BlueprintName = "JMForms"
+               BlueprintIdentifier = "4FCA7E0100CC5AB9361F8977171DB6CE"
+               BuildableName = "Pods_JMForms_Example.framework"
+               BlueprintName = "Pods-JMForms_Example"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
