@@ -1,5 +1,4 @@
 [![Swift v5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
-![Cocoapods](https://img.shields.io/cocoapods/p/:spec)
 [![Pod version](https://img.shields.io/cocoapods/v/JMForms.svg?style=flat)](https://cocoapods.org/pods/JMForms)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Stars](https://img.shields.io/github/stars/JMCPH/JMForms)
