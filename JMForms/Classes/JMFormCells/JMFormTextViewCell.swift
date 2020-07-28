@@ -12,7 +12,6 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
     
     let textView: UITextView = {
         let t = UITextView(frame: .zero)
-        t.backgroundColor = .clear
         t.textContainerInset = .zero
         t.textContainer.lineFragmentPadding = 0
         t.textColor = UIColor(r: 54, g: 54, b: 54)
