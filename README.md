@@ -1,10 +1,9 @@
 [![Swift v5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
 ![Cocoapods](https://img.shields.io/cocoapods/p/:spec)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Stars](https://img.shields.io/github/stars/JMCPH/JMForms)
 ![Issues](https://img.shields.io/github/issues/JMCPH/JMForms)
 ![Forks](https://img.shields.io/github/forks/JMCPH/JMForms)
-![Stars](https://img.shields.io/github/stars/JMCPH/JMForms)
-![Downloads](https://img.shields.io/github/downloads/JMCPH/JMForms/total)
 
 # JMForms
 
@@ -20,10 +19,13 @@ The framework is currently used in the [Tiimo | The ADHD & autism app](https://a
 
 ## Installation
 
-### CocoaPods - Coming soon...
+#### Cocoapods
 
-JMForms supports CocoaPods for easy installation.<br />
 ```pod 'JMForms'```
+
+#### Carthage
+
+```github "JMCPH/JMForms"```
 
 
 ## Usage example - Coming soon...
