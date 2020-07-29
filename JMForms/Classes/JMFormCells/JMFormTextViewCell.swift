@@ -102,6 +102,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         }
         
         textView.resignFirstResponder()
+        delegate?.didFinishCell(atIndexPath: indexPath)
         return false
         
     }
