@@ -44,7 +44,7 @@ A few motivating and useful examples of how your product can be used. Spice this
 🕴🏻 [Jakob Mikkelsen](https://github.com/JMCPH)<br />
 📩 [Email](mailto:jpm@codement.dk?subject=[GitHub]%20JMForms)<br />
 🔗 [LinkedIn](https://www.linkedin.com/in/JMCPH)<br />
-🖥 [Website](www.codement.dk)
+🖥 [Website](https://www.codement.dk)
 
 ## Contributing
 
