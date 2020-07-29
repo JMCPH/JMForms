@@ -85,7 +85,8 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
             .foregroundColor: uiProperties.placeholderColor,
         ])
         
-        item?.setValue(value: textField.text)
+        let trimmedString = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        item?.setValue(value: trimmedString)
         
     }
     

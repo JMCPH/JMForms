@@ -12,15 +12,14 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
     
     let textView: UITextView = {
         let t = UITextView(frame: .zero)
-        t.textContainerInset = .zero
-        t.textContainer.lineFragmentPadding = 0
         t.textColor = UIColor(r: 54, g: 54, b: 54)
         t.isScrollEnabled = false
         t.layer.cornerRadius = 3.0
         t.layer.borderWidth = 1.0
-        t.layer.borderColor = UIColor(r: 243, g: 243, b: 243).cgColor
-        t.textContainerInset = UIEdgeInsets(top: 8, left: 13, bottom: 8, right: 13)
+        t.textContainerInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         t.textContainer.maximumNumberOfLines = 3
+        t.textContainer.lineFragmentPadding = 0
+        t.font = UIFont.systemFont(ofSize: 15)
         return t
     }()
     
@@ -52,8 +51,6 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
     }
     
     override func draw(_ rect: CGRect) {
-        // textView.setLeftPaddingPoints(12) - Only for textfields
-        
         textView.layer.masksToBounds = false
         textView.layer.shadowRadius = 4.0
         textView.layer.shadowColor = UIColor(r: 224, g: 224, b: 224, a: 0.5).cgColor
@@ -62,9 +59,9 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        guard textView.alpha != 1.0 else { return }
+        guard textView.textColor != .black else { return }
         textView.text = nil
-        textView.alpha = 1.0
+        textView.textColor = .black
         
         // Add active border color
         guard let uiProperties = item?.uiProperties else { return }
@@ -79,16 +76,20 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         }
         
         // Show placeholder if empty
-        guard textView.text.isEmpty else { return }
         guard let uiProperties = item?.uiProperties else { return }
-        textView.text = uiProperties.placeholderText
-        textView.alpha = 0.999
         
         // Add inactive border color
         textView.layer.borderColor = uiProperties.borderColorInActive?.cgColor
+        
+        // Show placeholder text and color if empty
+        guard textView.text.isEmpty else { return }
+        textView.text = uiProperties.placeholderText
+        textView.textColor = .lightGray
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
         guard text == "\n" else {
             
             // Limit text input to be 130 characters.
@@ -102,6 +103,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         
         textView.resignFirstResponder()
         return false
+        
     }
     
 }
@@ -121,17 +123,21 @@ extension JMFormTextViewCell: JMFormUpdatable {
         self.item = item
         self.item?.delegate = self
         
+        guard let uiProperties = self.item?.uiProperties else { return }
+        
         // Show value
         if let value: String = self.item?.getValue(), !value.isEmpty {
-            self.textView.text = value
-            self.textView.alpha = 1.0
+            textView.text = value
+            textView.textColor = .black
         }
         // Show placeholder
         else {
-            guard let uiProperties = self.item?.uiProperties else { return }
             textView.text = uiProperties.placeholderText
-            textView.alpha = 0.999
+            textView.textColor = .lightGray
         }
+        
+        textView.layer.borderColor = textView.isFirstResponder ? uiProperties.borderColorActive?.cgColor : uiProperties.borderColorInActive?.cgColor
+        
         
     }
     

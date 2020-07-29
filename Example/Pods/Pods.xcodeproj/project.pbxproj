@@ -187,10 +187,10 @@
 		36B9D73724D06B86006A0D87 /* JMFormCells */ = {
 			isa = PBXGroup;
 			children = (
+				36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */,
+				36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */,
 				36B9D73824D06B86006A0D87 /* JMFormTextViewCell.swift */,
 				36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */,
-				36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */,
-				36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */,
 			);
 			name = JMFormCells;
 			path = JMForms/Classes/JMFormCells;
