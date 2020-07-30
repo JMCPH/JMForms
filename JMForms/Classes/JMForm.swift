@@ -21,13 +21,12 @@ public struct JMFormValidation {
 class JMForm {
     
     private(set) var sections = [JMFormSection]()
-    
-    public func update(withSections sections: [JMFormSection]) {
+
+    public func setup(withSections sections: [JMFormSection]) {
         self.sections = sections
     }
     
     var value: [String: Any] {
-        
         var valuesDictionary = [String: Any]()
         sections.forEach {
             $0.items.forEach {
@@ -35,23 +34,6 @@ class JMForm {
             }
         }
         return valuesDictionary
-        
-// WIP: This is only for codable forms.
-//        var valuesDictionary = [String: Encodable]()
-//        self.sections.forEach {
-//            $0.items.forEach {
-//                valuesDictionary[$0.tag] = $0.codableValue
-//            }
-//        }
-//
-//        do {
-//            let data = try JSONSerialization.data(withJSONObject: valuesDictionary, options: .prettyPrinted)
-//            return try JSONDecoder().decode(T.self, from: data)
-//        } catch {
-//            debugPrint(error.localizedDescription)
-//            return valuesDictionary
-//        }
-        
     }
     
     // MARK: Form Validation

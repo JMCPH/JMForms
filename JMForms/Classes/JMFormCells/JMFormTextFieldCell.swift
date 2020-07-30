@@ -81,7 +81,7 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         textField.layer.borderColor = uiProperties.borderColorInActive?.cgColor
         
         // Add placeholder if end editing
-        textField.attributedPlaceholder = NSAttributedString(string: uiProperties.placeholderText ?? "", attributes: [
+        textField.attributedPlaceholder = NSAttributedString(string: item?.placeholderText ?? "", attributes: [
             .foregroundColor: uiProperties.placeholderColor,
         ])
         
@@ -92,8 +92,8 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
     
     private func setupTextFieldUI() {
         guard let properties = item?.uiProperties else { return }
-        textField.textColor = properties.textColor
-        textField.attributedPlaceholder = NSAttributedString(string: properties.placeholderText ?? "",
+        textField.textColor = properties.titleColor
+        textField.attributedPlaceholder = NSAttributedString(string: item?.placeholderText ?? "",
                                                              attributes: [.foregroundColor: properties.placeholderColor])
         textField.layer.borderColor = textField.isFirstResponder ? properties.borderColorActive?.cgColor : properties.borderColorInActive?.cgColor
         
@@ -193,7 +193,6 @@ extension JMFormTextFieldCell {
         }
         
     }
-    
     
 //
 // NOT USED AT THE  MOMENT - These functions are used to add a toolbar on top of the keyboard without a return button

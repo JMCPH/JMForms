@@ -70,7 +70,7 @@ extension JMFormSwitchCell: JMFormUpdatable {
     
     func update(withForm item: JMFormItem) {
         self.item = item
-        self.titleLabel.text = item.uiProperties.titleText
+        self.titleLabel.text = item.titleText
         
         // Setup the text to be the value of the item
         let isOn: Bool = item.getValue() ?? false

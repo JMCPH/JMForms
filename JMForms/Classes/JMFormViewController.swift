@@ -37,7 +37,7 @@ open class JMFormViewController: UITableViewController {
         setupKeyboardObservers()
         
         // Set the sections for this form.
-        form.update(withSections: sections)
+        form.setup(withSections: sections)
         
         // Setup the UI of the tableView
         setupTableView()

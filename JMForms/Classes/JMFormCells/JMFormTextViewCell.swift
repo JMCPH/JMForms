@@ -83,7 +83,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         
         // Show placeholder text and color if empty
         guard textView.text.isEmpty else { return }
-        textView.text = uiProperties.placeholderText
+        textView.text = item?.placeholderText
         textView.textColor = .lightGray
         
     }
@@ -133,7 +133,7 @@ extension JMFormTextViewCell: JMFormUpdatable {
         }
         // Show placeholder
         else {
-            textView.text = uiProperties.placeholderText
+            textView.text = item.placeholderText
             textView.textColor = .lightGray
         }
         
