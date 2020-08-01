@@ -15,7 +15,6 @@
 		36B9D73E24D06B86006A0D87 /* JMForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72B24D06B86006A0D87 /* JMForm.swift */; };
 		36B9D73F24D06B86006A0D87 /* JMFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72D24D06B86006A0D87 /* JMFormItem.swift */; };
 		36B9D74024D06B86006A0D87 /* JMFormItemCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72E24D06B86006A0D87 /* JMFormItemCellType.swift */; };
-		36B9D74124D06B86006A0D87 /* JMFormItemUIProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72F24D06B86006A0D87 /* JMFormItemUIProperty.swift */; };
 		36B9D74224D06B86006A0D87 /* JMFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73124D06B86006A0D87 /* JMFormValidation.swift */; };
 		36B9D74324D06B86006A0D87 /* JMFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73224D06B86006A0D87 /* JMFormValidator.swift */; };
 		36B9D74424D06B86006A0D87 /* JMFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73324D06B86006A0D87 /* JMFormViewController.swift */; };
@@ -67,7 +66,6 @@
 		36B9D72B24D06B86006A0D87 /* JMForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JMForm.swift; path = JMForms/Classes/JMForm.swift; sourceTree = "<group>"; };
 		36B9D72D24D06B86006A0D87 /* JMFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItem.swift; sourceTree = "<group>"; };
 		36B9D72E24D06B86006A0D87 /* JMFormItemCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItemCellType.swift; sourceTree = "<group>"; };
-		36B9D72F24D06B86006A0D87 /* JMFormItemUIProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItemUIProperty.swift; sourceTree = "<group>"; };
 		36B9D73124D06B86006A0D87 /* JMFormValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormValidation.swift; sourceTree = "<group>"; };
 		36B9D73224D06B86006A0D87 /* JMFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormValidator.swift; sourceTree = "<group>"; };
 		36B9D73324D06B86006A0D87 /* JMFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JMFormViewController.swift; path = JMForms/Classes/JMFormViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				36B9D72D24D06B86006A0D87 /* JMFormItem.swift */,
 				368FEF5D24D36EDA00935498 /* JMFormItemAppearence.swift */,
 				36B9D72E24D06B86006A0D87 /* JMFormItemCellType.swift */,
-				36B9D72F24D06B86006A0D87 /* JMFormItemUIProperty.swift */,
 			);
 			name = JMFormItem;
 			path = JMForms/Classes/JMFormItem;
@@ -473,7 +470,6 @@
 				36B9D74024D06B86006A0D87 /* JMFormItemCellType.swift in Sources */,
 				36B9D74824D06B86006A0D87 /* JMFormSwitchCell.swift in Sources */,
 				A9179D7766EF0A3D3BCB48BDD39ABE99 /* JMForms-dummy.m in Sources */,
-				36B9D74124D06B86006A0D87 /* JMFormItemUIProperty.swift in Sources */,
 				36B9D74424D06B86006A0D87 /* JMFormViewController.swift in Sources */,
 				36B3158F24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift in Sources */,
 				36B9D74924D06B86006A0D87 /* JMFormTextFieldCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  JMFormItemAppearence.swift
+//  JMFormItemAppearance.swift
 //  JMForms
 //
 //  Created by Jakob Mikkelsen on 30/07/2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol JMFormItemAppearence {
+public protocol JMFormItemAppearance {
     
     // MARK: - Colors
     
@@ -28,6 +28,10 @@ public protocol JMFormItemAppearence {
     var borderColorInActive: UIColor? { get set }
     var borderColorActive: UIColor? { get set }
     
+    // Border layer
+//    public var borderType: UIRectEdge? = nil
+//    public var borderWidth: CGFloat? = nil
+    
     
     // MARK: - Fonts
     
@@ -37,7 +41,7 @@ public protocol JMFormItemAppearence {
     
 }
 
-struct JMFormItemAppearenceDefault: JMFormItemAppearence {
+struct JMFormItemAppearanceDefault: JMFormItemAppearance {
     
     var backgroundColor: UIColor = .clear
     

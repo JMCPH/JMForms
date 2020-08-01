@@ -72,14 +72,14 @@ public class JMFormItem {
     /// Validation of the item
     private(set) var isRequired: Bool
     
-    /// UI Properties of the item
-    public var uiProperties: JMFormItemAppearence
+    /// UI Appearance of the item
+    public var appearance: JMFormItemAppearance
     
     // Initalization of the JMFormItem
-    public init(tag: String, cellType: JMFormCellType, appearence: JMFormItemAppearence, titleText: String? = nil, detailText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator? = nil, isRequired: Bool = true) {
+    public init(tag: String, cellType: JMFormCellType, appearance: JMFormItemAppearance, titleText: String? = nil, detailText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator? = nil, isRequired: Bool = true) {
         self.tag = tag
         self.cellType = cellType
-        self.uiProperties = appearence
+        self.appearance = appearance
         self.titleText = titleText
         self.detailText = detailText
         self.placeholderText = placeholderText
