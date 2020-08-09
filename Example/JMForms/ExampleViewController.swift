@@ -44,16 +44,16 @@ class ExampleViewController: JMFormViewController {
         let termsAndConditions = JMFormItem(tag: "terms", cellType: .switcher, titleText: "I accept the terms and conditions of using the JMForms example project.", validator: nil)
         
         // Setup the sections for the form
-        let sections = [JMFormSection(items: [firstName], title: "First name", isCollapsed: false),
-                        JMFormSection(items: [lastName], title: "Last name", isCollapsed: false),
-                        JMFormSection(items: [biography], title: "Biography", isCollapsed: false),
-                        JMFormSection(items: [age], title: "Age", isCollapsed: false),
-                        JMFormSection(items: [email], title: "Email", isCollapsed: false),
-                        JMFormSection(items: [confirmEmail], title: "Confirm email", isCollapsed: false),
-                        JMFormSection(items: [password], title: "Password", isCollapsed: false),
-                        JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)]
-        
-        setupForm(withSections: sections)
+        self.setupForm(
+            JMFormSection(items: [firstName], title: "First name", isCollapsed: false),
+            JMFormSection(items: [lastName], title: "Last name", isCollapsed: false),
+            JMFormSection(items: [biography], title: "Biography", isCollapsed: false),
+            JMFormSection(items: [age], title: "Age", isCollapsed: false),
+            JMFormSection(items: [email], title: "Email", isCollapsed: false),
+            JMFormSection(items: [confirmEmail], title: "Confirm email", isCollapsed: false),
+            JMFormSection(items: [password], title: "Password", isCollapsed: false),
+            JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)
+        )
         
     }
     
