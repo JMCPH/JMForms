@@ -41,26 +41,28 @@ public protocol JMFormItemAppearance {
     
 }
 
-struct JMFormItemAppearanceDefault: JMFormItemAppearance {
+public struct JMFormItemAppearanceDefault: JMFormItemAppearance {
     
-    var backgroundColor: UIColor = .clear
+    public var backgroundColor: UIColor = .clear
     
-    var titleColor: UIColor = .black
+    public var titleColor: UIColor = .black
     
-    var titleInvalidColor: UIColor = .red
+    public var titleInvalidColor: UIColor = .red
     
-    var valueColor: UIColor = .black
+    public var valueColor: UIColor = .black
     
-    var placeholderColor: UIColor = .lightGray
+    public var placeholderColor: UIColor = .lightGray
     
-    var borderColorInActive: UIColor? = UIColor(r: 237, g: 237, b: 237)
+    public var borderColorInActive: UIColor? = UIColor(r: 237, g: 237, b: 237)
     
-    var borderColorActive: UIColor? = .blue
+    public var borderColorActive: UIColor? = .blue
     
-    var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
+    public var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
     
-    var valueFont: UIFont = UIFont.systemFont(ofSize: 15)
+    public var valueFont: UIFont = UIFont.systemFont(ofSize: 15)
     
-    var placeholderFont: UIFont = UIFont.systemFont(ofSize: 15)
+    public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 15)
     
+    
+    public init() { }
 }

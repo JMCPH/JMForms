@@ -31,10 +31,8 @@ extension JMFormItem: JMFormValidable {
             guard let email: String = getValue() else {
                 return .init(isValid: false, errorString: "Please type in an e-mail.")
             }
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-            let isValid = emailPred.evaluate(with: email)
-            return .init(isValid: isValid, errorString: "Please type in a valid email.")
+            let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            return .init(isValid: validate(string: email, withRegex: regex), errorString: "Please type in a valid email.")
             
         case .equalEmail(let item):
             guard let email: String = getValue(), let equalItemString: String = item.getValue() else {
@@ -62,12 +60,31 @@ extension JMFormItem: JMFormValidable {
             
             return .init(isValid: true, errorString: nil)
             
+        case .url:
+            guard let url: String = getValue() else {
+                return .init(isValid: false, errorString: "Please type in a valid url.")
+            }
+            let regex = "(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+"
+            return .init(isValid: validate(string: url, withRegex: regex), errorString: "Please type in a valid url.")
+            
+        case .numeric:
+            guard let numericString: String = getValue() else {
+                return .init(isValid: false, errorString: "Please type in a valid numeric for \(titleText ?? "")")
+            }
+            let regex = "[^0-9]"
+            return .init(isValid: validate(string: numericString, withRegex: regex), errorString: "Please type in a valid numeric for \(titleText ?? "")")
+            
         case .none:
             return .init(isValid: true, errorString: nil)
             
         }
         
         return .init(isValid: true, errorString: nil)
+    }
+    
+    private func validate(string: String, withRegex regex: String) -> Bool {
+        let predication = NSPredicate(format:"SELF MATCHES %@", regex)
+        return predication.evaluate(with: string)
     }
     
 }

@@ -76,7 +76,7 @@ public class JMFormItem {
     public var appearance: JMFormItemAppearance
     
     // Initalization of the JMFormItem
-    public init(tag: String, cellType: JMFormCellType, appearance: JMFormItemAppearance, titleText: String? = nil, detailText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator? = nil, isRequired: Bool = true) {
+    public init(tag: String, cellType: JMFormCellType, appearance: JMFormItemAppearance = JMFormItemAppearanceDefault(), titleText: String? = nil, detailText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator? = nil, isRequired: Bool = true) {
         self.tag = tag
         self.cellType = cellType
         self.appearance = appearance
