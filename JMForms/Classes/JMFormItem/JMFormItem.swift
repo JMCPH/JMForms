@@ -47,6 +47,11 @@ public class JMFormItem {
         }
     }
     
+    // Text of the item
+    private(set) var titleText: String?
+    private(set) var detailText: String?
+    private(set) var placeholderText: String?
+    
     var isExpanded: Bool = false
     
     /// This list of options when selecting
@@ -67,15 +72,17 @@ public class JMFormItem {
     /// Validation of the item
     private(set) var isRequired: Bool
     
-    /// UI Properties of the item
-    public var uiProperties = JMFormItemUIProperties()
+    /// UI Appearance of the item
+    public var appearance: JMFormItemAppearance
     
     // Initalization of the JMFormItem
-    public init(tag: String, cellType: JMFormCellType, titleText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator?, isRequired: Bool = true) {
+    public init(tag: String, cellType: JMFormCellType, appearance: JMFormItemAppearance = JMFormItemAppearanceDefault(), titleText: String? = nil, detailText: String? = nil, placeholderText: String? = nil, value: Any? = nil, validator: JMFormValidator? = nil, isRequired: Bool = true) {
         self.tag = tag
         self.cellType = cellType
-        self.uiProperties.titleText = titleText
-        self.uiProperties.placeholderText = placeholderText
+        self.appearance = appearance
+        self.titleText = titleText
+        self.detailText = detailText
+        self.placeholderText = placeholderText
         self.value = value
         self.validator = validator
         self.isRequired = true

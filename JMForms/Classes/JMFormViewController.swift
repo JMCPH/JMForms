@@ -28,7 +28,7 @@ open class JMFormViewController: UITableViewController {
     
     // MARK: - Setup the JMFormViewController
     
-    public func setupForm(withSections sections: [JMFormSection]) {
+    public func setupForm(_ sections: JMFormSection...) {
         
         // JMForm - Register all the form cells for this tableview
         JMFormCellType.registerCells(for: tableView)
@@ -37,7 +37,7 @@ open class JMFormViewController: UITableViewController {
         setupKeyboardObservers()
         
         // Set the sections for this form.
-        form.update(withSections: sections)
+        form.setup(withSections: sections)
         
         // Setup the UI of the tableView
         setupTableView()

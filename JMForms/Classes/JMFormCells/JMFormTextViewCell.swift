@@ -64,8 +64,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         textView.textColor = .black
         
         // Add active border color
-        guard let uiProperties = item?.uiProperties else { return }
-        textView.layer.borderColor = uiProperties.borderColorActive?.cgColor
+        textView.layer.borderColor = item?.appearance.borderColorActive?.cgColor
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -75,15 +74,12 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
             self.item?.setValue(value: text)
         }
         
-        // Show placeholder if empty
-        guard let uiProperties = item?.uiProperties else { return }
-        
         // Add inactive border color
-        textView.layer.borderColor = uiProperties.borderColorInActive?.cgColor
+        textView.layer.borderColor = item?.appearance.borderColorInActive?.cgColor
         
         // Show placeholder text and color if empty
         guard textView.text.isEmpty else { return }
-        textView.text = uiProperties.placeholderText
+        textView.text = item?.placeholderText
         textView.textColor = .lightGray
         
     }
@@ -124,7 +120,7 @@ extension JMFormTextViewCell: JMFormUpdatable {
         self.item = item
         self.item?.delegate = self
         
-        guard let uiProperties = self.item?.uiProperties else { return }
+        guard let appearance = self.item?.appearance else { return }
         
         // Show value
         if let value: String = self.item?.getValue(), !value.isEmpty {
@@ -133,11 +129,11 @@ extension JMFormTextViewCell: JMFormUpdatable {
         }
         // Show placeholder
         else {
-            textView.text = uiProperties.placeholderText
+            textView.text = item.placeholderText
             textView.textColor = .lightGray
         }
         
-        textView.layer.borderColor = textView.isFirstResponder ? uiProperties.borderColorActive?.cgColor : uiProperties.borderColorInActive?.cgColor
+        textView.layer.borderColor = textView.isFirstResponder ? appearance.borderColorActive?.cgColor : appearance.borderColorInActive?.cgColor
         
         
     }

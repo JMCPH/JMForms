@@ -71,18 +71,18 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         textField.placeholder = nil
         
         // Add active border color
-        textField.layer.borderColor = item?.uiProperties.borderColorActive?.cgColor
+        textField.layer.borderColor = item?.appearance.borderColorActive?.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let uiProperties = item?.uiProperties else { return }
+        guard let appearance = item?.appearance else { return }
         
         // Add inactive border color
-        textField.layer.borderColor = uiProperties.borderColorInActive?.cgColor
+        textField.layer.borderColor = appearance.borderColorInActive?.cgColor
         
         // Add placeholder if end editing
-        textField.attributedPlaceholder = NSAttributedString(string: uiProperties.placeholderText ?? "", attributes: [
-            .foregroundColor: uiProperties.placeholderColor,
+        textField.attributedPlaceholder = NSAttributedString(string: item?.placeholderText ?? "", attributes: [
+            .foregroundColor: appearance.placeholderColor,
         ])
         
         let trimmedString = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -91,11 +91,11 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
     }
     
     private func setupTextFieldUI() {
-        guard let properties = item?.uiProperties else { return }
-        textField.textColor = properties.textColor
-        textField.attributedPlaceholder = NSAttributedString(string: properties.placeholderText ?? "",
-                                                             attributes: [.foregroundColor: properties.placeholderColor])
-        textField.layer.borderColor = textField.isFirstResponder ? properties.borderColorActive?.cgColor : properties.borderColorInActive?.cgColor
+        guard let appearance = item?.appearance else { return }
+        textField.textColor = appearance.titleColor
+        textField.attributedPlaceholder = NSAttributedString(string: item?.placeholderText ?? "",
+                                                             attributes: [.foregroundColor: appearance.placeholderColor])
+        textField.layer.borderColor = textField.isFirstResponder ? appearance.borderColorActive?.cgColor : appearance.borderColorInActive?.cgColor
         
     }
     
@@ -193,7 +193,6 @@ extension JMFormTextFieldCell {
         }
         
     }
-    
     
 //
 // NOT USED AT THE  MOMENT - These functions are used to add a toolbar on top of the keyboard without a return button
