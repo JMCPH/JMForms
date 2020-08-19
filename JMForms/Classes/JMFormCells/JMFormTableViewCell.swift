@@ -15,14 +15,20 @@ protocol JMFormCell {
     var item: JMFormItem? {get set}
 }
 
-protocol JMFormCellDelegate {
+protocol JMFormCellDelegate: class {
     func didFinishCell(atIndexPath indexPath: IndexPath)
+    func didTapCell(atIndexPath indexPath: IndexPath)
 }
 
 class JMFormTableViewCell: UITableViewCell, JMFormCell {
     var indexPath: IndexPath = []
-    var delegate: JMFormCellDelegate?
-    var item: JMFormItem?
+    weak var delegate: JMFormCellDelegate?
+    weak var item: JMFormItem?
+    
+    deinit {
+        item = nil
+        delegate = nil
+    }
     
 //    func setup() {
 //

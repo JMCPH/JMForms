@@ -74,6 +74,13 @@ extension JMFormItem: JMFormValidable {
             let regex = "[^0-9]"
             return .init(isValid: validate(string: numericString, withRegex: regex), errorString: "Please type in a valid numeric for \(titleText ?? "")")
             
+            
+        case .image:
+            guard let _: UIImage = getValue() else {
+                return .init(isValid: false, errorString: "Please add an image")
+            }
+            return .init(isValid: true, errorString: nil)
+            
         case .none:
             return .init(isValid: true, errorString: nil)
             

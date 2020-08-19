@@ -15,16 +15,23 @@ open class JMFormViewController: UITableViewController {
         case invalid(String)
     }
     
-    private let form = JMForm()
+    private var form: JMForm? = JMForm()
     
     public var validation: ValidationState {
-        let validation = form.validate()
+        guard let validation = form?.validate() else { return .invalid("") }
         return validation.isValid ? .valid : .invalid(validation.errorString ?? "")
     }
 
     public var values: [String: Any]? {
-        return form.value
+        return form?.value
     }
+    
+    deinit {
+        form = nil
+    }
+
+    private var imagePicker: JMImagePicker?
+    private var selectionPicker: JMListSelectionController?
     
     // MARK: - Setup the JMFormViewController
     
@@ -37,7 +44,7 @@ open class JMFormViewController: UITableViewController {
         setupKeyboardObservers()
         
         // Set the sections for this form.
-        form.setup(withSections: sections)
+        form?.setup(withSections: sections)
         
         // Setup the UI of the tableView
         setupTableView()
@@ -45,10 +52,13 @@ open class JMFormViewController: UITableViewController {
         // Reload the tableview
         tableView.reloadData()
         
+        // Setup image picker
+        imagePicker = JMImagePicker(presentationController: self)
+        
     }
     
     public func didFinishItem(withTag tag: String) {
-        form.didFinishItem(withTag: tag)
+        form?.didFinishItem(withTag: tag)
     }
     
     private func setupTableView() {
@@ -96,17 +106,17 @@ open class JMFormViewController: UITableViewController {
     // MARK: - Table view data source
 
     public override func numberOfSections(in tableView: UITableView) -> Int {
-        return form.sections.count
+        return form?.sections.count ?? 0
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return form.sections[section].isCollapsed ? 0 : form.sections[section].items.count
+        return (form?.sections[section].isCollapsed ?? false) ? 0 : form?.sections[section].items.count ?? 0
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Get the _item_ in the section and set the indexpath, to be able to reload this specific item.
-        let item = form.sections[indexPath.section].items[indexPath.row]
+        guard let item = form?.sections[indexPath.section].items[indexPath.row] else { return UITableViewCell() }
         
         guard let cellType = item.cellType else { return UITableViewCell() }
         guard let cell = cellType.dequeueCell(for: tableView, at: indexPath) as? JMFormTableViewCell else { fatalError() }
@@ -128,14 +138,14 @@ open class JMFormViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerTitle = form.sections[section].title else { return UIView() }
+        guard let headerTitle = form?.sections[section].title else { return UIView() }
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? JMFormSectionHeaderView else { return nil }
         header.titleLabel.text = headerTitle
         return header
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard form.sections[section].title != nil else { return 1 }
+        guard form?.sections[section].title != nil else { return 1 }
         return 20
     }
     
@@ -146,8 +156,36 @@ open class JMFormViewController: UITableViewController {
 }
 
 extension JMFormViewController: JMFormCellDelegate {
+    
     func didFinishCell(atIndexPath indexPath: IndexPath) {
-        let item = form.sections[indexPath.section].items[indexPath.row]
-        form.didFinishItem(withTag: item.tag)
+        guard let item = form?.sections[indexPath.section].items[indexPath.row] else { return }
+        form?.didFinishItem(withTag: item.tag)
     }
+    
+    func didTapCell(atIndexPath indexPath: IndexPath) {
+        
+        guard let imageItem = form?.sections[indexPath.section].items[indexPath.row] else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        
+        switch imageItem.cellType {
+        case .image:
+            
+            // Display the JMImagePicker and set the image as value
+            imagePicker?.present(from: cell)
+            imagePicker?.didSelectImage = { [weak self] (image) in
+                imageItem.setValue(value: image)
+                self?.tableView.reloadData()
+            }
+            
+        // TODO
+        case .listSelection: break
+            
+            // Display the selection view controller
+            
+            
+        default: break
+        }
+        
+    }
+    
 }

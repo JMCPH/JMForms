@@ -15,4 +15,5 @@ public enum JMFormValidator {
     case password(minimumCount: Int)
     case url
     case numeric
+    case image
 }

@@ -14,6 +14,8 @@ public enum JMFormCellType {
     case textfield(type: JMFormItemType?)
     case textView
     case switcher
+    case image
+    case listSelection
     
     /// Registering methods for all forms items cell types
     ///
@@ -22,6 +24,8 @@ public enum JMFormCellType {
         tableView.register(JMFormTextFieldCell.self, forCellReuseIdentifier: "JMFormTextFieldCell")
         tableView.register(JMFormTextViewCell.self, forCellReuseIdentifier: "JMFormTextViewCell")
         tableView.register(JMFormSwitchCell.self, forCellReuseIdentifier: "JMFormSwitchCell")
+        tableView.register(JMFormImageCell.self, forCellReuseIdentifier: "JMFormImageCell")
+        tableView.register(JMFormListSelectionCell.self, forCellReuseIdentifier: "JMFormListSelectionCell")
     }
     
     /// Correctly dequeue the UITableViewCell according to the current cell type
@@ -39,6 +43,11 @@ public enum JMFormCellType {
             return tableView.dequeueReusableCell(withIdentifier: "JMFormTextViewCell", for: indexPath)
         case .switcher:
             return tableView.dequeueReusableCell(withIdentifier: "JMFormSwitchCell", for: indexPath)
+        case .image:
+            return tableView.dequeueReusableCell(withIdentifier: "JMFormImageCell", for: indexPath)
+        case .listSelection:
+            return tableView.dequeueReusableCell(withIdentifier: "JMFormListSelectionCell", for: indexPath)
+            
         }
         
     }

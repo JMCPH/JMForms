@@ -24,6 +24,10 @@
 		36B9D74824D06B86006A0D87 /* JMFormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */; };
 		36B9D74924D06B86006A0D87 /* JMFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */; };
 		36B9D74A24D06B86006A0D87 /* JMFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */; };
+		36BFC42124EC097A003B2E07 /* JMFormImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFC42024EC097A003B2E07 /* JMFormImageCell.swift */; };
+		36C7D9C824ED619C00383673 /* JMImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7D9C724ED619C00383673 /* JMImagePicker.swift */; };
+		36C7D9CA24ED654A00383673 /* JMFormListSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7D9C924ED654A00383673 /* JMFormListSelectionCell.swift */; };
+		36C7D9CC24ED66C100383673 /* JMListSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7D9CB24ED66C100383673 /* JMListSelectionController.swift */; };
 		401719D577FE2F952BD63322836A24F6 /* Pods-JMForms_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AFD6D3912E2C3417443BE5467F63EA /* Pods-JMForms_Tests-dummy.m */; };
 		49971C5CCAECE49D20337C47D26F1BDA /* JMForms-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F99CB662B4A404E0D167A67675EDE95 /* JMForms-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6455DAF8E6075739E7D45E6D4596B9D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -75,6 +79,10 @@
 		36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSwitchCell.swift; sourceTree = "<group>"; };
 		36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormTextFieldCell.swift; sourceTree = "<group>"; };
 		36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormTableViewCell.swift; sourceTree = "<group>"; };
+		36BFC42024EC097A003B2E07 /* JMFormImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormImageCell.swift; sourceTree = "<group>"; };
+		36C7D9C724ED619C00383673 /* JMImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMImagePicker.swift; sourceTree = "<group>"; };
+		36C7D9C924ED654A00383673 /* JMFormListSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormListSelectionCell.swift; sourceTree = "<group>"; };
+		36C7D9CB24ED66C100383673 /* JMListSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMListSelectionController.swift; sourceTree = "<group>"; };
 		3781018D1EF7622049D6D772B6590883 /* Pods-JMForms_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMForms_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3782268641A067255C3DC323E2858135 /* Pods-JMForms_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMForms_Example-Info.plist"; sourceTree = "<group>"; };
 		44905AE1A20EBD952A3BAD4C5013384A /* Pods-JMForms_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JMForms_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 			children = (
 				36B9D73524D06B86006A0D87 /* UIColor+Extensions.swift */,
 				36B9D73624D06B86006A0D87 /* UITextField+Extensions.swift */,
+				36C7D9C724ED619C00383673 /* JMImagePicker.swift */,
+				36C7D9CB24ED66C100383673 /* JMListSelectionController.swift */,
 			);
 			name = Extensions;
 			path = JMForms/Classes/Extensions;
@@ -192,6 +202,8 @@
 				36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */,
 				36B9D73824D06B86006A0D87 /* JMFormTextViewCell.swift */,
 				36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */,
+				36BFC42024EC097A003B2E07 /* JMFormImageCell.swift */,
+				36C7D9C924ED654A00383673 /* JMFormListSelectionCell.swift */,
 			);
 			name = JMFormCells;
 			path = JMForms/Classes/JMFormCells;
@@ -461,19 +473,23 @@
 			files = (
 				36B9D74624D06B86006A0D87 /* UITextField+Extensions.swift in Sources */,
 				36B9D74524D06B86006A0D87 /* UIColor+Extensions.swift in Sources */,
+				36C7D9CA24ED654A00383673 /* JMFormListSelectionCell.swift in Sources */,
 				36B9D74324D06B86006A0D87 /* JMFormValidator.swift in Sources */,
+				36BFC42124EC097A003B2E07 /* JMFormImageCell.swift in Sources */,
 				36B9D74224D06B86006A0D87 /* JMFormValidation.swift in Sources */,
 				36B9D73F24D06B86006A0D87 /* JMFormItem.swift in Sources */,
 				36B9D74A24D06B86006A0D87 /* JMFormTableViewCell.swift in Sources */,
 				36B9D74724D06B86006A0D87 /* JMFormTextViewCell.swift in Sources */,
 				368FEF5E24D36EDA00935498 /* JMFormItemAppearence.swift in Sources */,
 				36B9D74024D06B86006A0D87 /* JMFormItemCellType.swift in Sources */,
+				36C7D9CC24ED66C100383673 /* JMListSelectionController.swift in Sources */,
 				36B9D74824D06B86006A0D87 /* JMFormSwitchCell.swift in Sources */,
 				A9179D7766EF0A3D3BCB48BDD39ABE99 /* JMForms-dummy.m in Sources */,
 				36B9D74424D06B86006A0D87 /* JMFormViewController.swift in Sources */,
 				36B3158F24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift in Sources */,
 				36B9D74924D06B86006A0D87 /* JMFormTextFieldCell.swift in Sources */,
 				36B3159024D1D30600BC2EB7 /* JMFormSection.swift in Sources */,
+				36C7D9C824ED619C00383673 /* JMImagePicker.swift in Sources */,
 				36B9D73E24D06B86006A0D87 /* JMForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

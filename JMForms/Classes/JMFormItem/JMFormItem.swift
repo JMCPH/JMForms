@@ -27,6 +27,8 @@ public enum JMFormItemType {
     case age
     case postalCode
     case phone
+    case image
+    case selection
 }
 
 /// ViewModel to display and react to text events, to update data
@@ -61,7 +63,7 @@ public class JMFormItem {
     var valueCompletion: ((_ value: Any?) -> Void)?
     
     /// The DidTapCell block is executed to tell if the UITableViewCell is being tapped, to e.g. expand the cell. This is used in the JMFormDatePickerCell.
-    var didTapCell: ((Bool) -> Void)?
+    public var didTapCell: (() -> Void)?
     
     /// ViewController is used to display a e.g. options UITableViewController with the 'options' values to be selected.
     weak var viewController: UIViewController?
@@ -98,6 +100,10 @@ public class JMFormItem {
     
     public func getValue<T>() -> T? {
         return value as? T
+    }
+    
+    public func getAnyValue() -> Any? {
+        return value
     }
 }
 
