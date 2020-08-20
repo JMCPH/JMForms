@@ -37,7 +37,7 @@ class JMFormSectionHeaderView: UITableViewHeaderFooterView {
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
+        titleLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 150).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -37,6 +37,7 @@ A few motivating and useful examples of how your product can be used. Spice this
 - UITextField
 - UITextView
 - UISwitch
+- UIImagePicker
 - More coming soon...
 
 ## Author

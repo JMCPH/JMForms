@@ -31,7 +31,6 @@ public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
     public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 15)
     
-    
     public init() { }
 }
 
@@ -107,6 +106,10 @@ class ExampleViewController: JMFormViewController {
     }
     
     @objc private func submitForm() {
+        
+        let destination = ExampleViewController()
+        self.navigationController?.pushViewController(destination, animated: true)
+        
         view.endEditing(true)
 
         switch validation {

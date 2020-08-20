@@ -48,17 +48,17 @@ class JMFormImageCell: JMFormTableViewCell {
     private func defineLayout() {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 31).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: imageV.leadingAnchor, constant: -10).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         imageV.translatesAutoresizingMaskIntoConstraints = false
-        imageV.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        imageV.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         imageV.widthAnchor.constraint(equalToConstant: 65).isActive = true
         imageV.heightAnchor.constraint(equalToConstant: 65).isActive = true
         imageV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
+        imageV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
         
     }
     
