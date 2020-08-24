@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Add an expandable protocol for the cells.
+
 /// Conform receiver to have a form item property
 protocol JMFormCell {
     var indexPath: IndexPath {get set}

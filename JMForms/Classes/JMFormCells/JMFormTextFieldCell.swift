@@ -146,7 +146,7 @@ extension JMFormTextFieldCell: JMFormItemDelegate {
 
 extension JMFormTextFieldCell {
     
-    private func setupTextField(withType type: JMFormItemType?) {
+    private func setupTextField(withType type: JMFormItemTextFieldType?) {
         guard let type = type else { return }
         
         switch type {

@@ -69,6 +69,10 @@ class ExampleViewController: JMFormViewController {
         let password = JMFormItem(tag: "password", cellType: .textfield(type: .newPassword), placeholderText: "Enter your password", validator: .password(minimumCount: 6))
         let age = JMFormItem(tag: "age", cellType: .textfield(type: .age), placeholderText: "Enter your age", validator: .age)
         let termsAndConditions = JMFormItem(tag: "terms", cellType: .switcher, titleText: "I accept the terms and conditions of using the JMForms example project.", validator: nil)
+
+        let date = JMFormItem(tag: "date", cellType: .datePicker(mode: .date), titleText: "Select date", isRequired: false)
+        let time = JMFormItem(tag: "time", cellType: .datePicker(mode: .time), titleText: "Select time", isRequired: false)
+        let dateTime = JMFormItem(tag: "dateTime", cellType: .datePicker(mode: .dateAndTime), titleText: "Select date and time", isRequired: false)
         
         // Setup the sections for the form
         self.setupForm(
@@ -80,6 +84,9 @@ class ExampleViewController: JMFormViewController {
             JMFormSection(items: [email], title: "Email", isCollapsed: false),
             JMFormSection(items: [confirmEmail], title: "Confirm email", isCollapsed: false),
             JMFormSection(items: [password], title: "Password", isCollapsed: false),
+            JMFormSection(items: [date], title: "Select a day", isCollapsed: false),
+            JMFormSection(items: [time], title: "Select a time", isCollapsed: false),
+            JMFormSection(items: [dateTime], title: "Select both date and time", isCollapsed: false),
             JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)
         )
         

@@ -11,10 +11,11 @@ import Foundation
 
 /// UI Cell Type to be displayed
 public enum JMFormCellType {
-    case textfield(type: JMFormItemType?)
+    case textfield(type: JMFormItemTextFieldType?)
     case textView
     case switcher
     case image
+    case datePicker(mode: UIDatePicker.Mode)
     case listSelection
     
     /// Registering methods for all forms items cell types
@@ -25,6 +26,7 @@ public enum JMFormCellType {
         tableView.register(JMFormTextViewCell.self, forCellReuseIdentifier: "JMFormTextViewCell")
         tableView.register(JMFormSwitchCell.self, forCellReuseIdentifier: "JMFormSwitchCell")
         tableView.register(JMFormImageCell.self, forCellReuseIdentifier: "JMFormImageCell")
+        tableView.register(JMFormDateCell.self, forCellReuseIdentifier: "JMFormDateCell")
         tableView.register(JMFormListSelectionCell.self, forCellReuseIdentifier: "JMFormListSelectionCell")
     }
     
@@ -45,6 +47,8 @@ public enum JMFormCellType {
             return tableView.dequeueReusableCell(withIdentifier: "JMFormSwitchCell", for: indexPath)
         case .image:
             return tableView.dequeueReusableCell(withIdentifier: "JMFormImageCell", for: indexPath)
+        case .datePicker:
+            return tableView.dequeueReusableCell(withIdentifier: "JMFormDateCell", for: indexPath)
         case .listSelection:
             return tableView.dequeueReusableCell(withIdentifier: "JMFormListSelectionCell", for: indexPath)
             

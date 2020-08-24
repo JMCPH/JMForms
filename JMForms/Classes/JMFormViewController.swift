@@ -130,7 +130,22 @@ open class JMFormViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+//        // Only check if the type is .datePicker
+//        guard let type = form?.sections[indexPath.section].items[indexPath.row].cellType else {
+//            return UITableView.automaticDimension
+//        }
+//
+//        switch type {
+//        case .datePicker:
+//            if let dateCell = tableView.cellForRow(at: indexPath) as? JMFormExpandable {
+//                return dateCell.getCellHeight()
+//            }
+//        default: break
+//        }
+//
         return UITableView.automaticDimension
+        
     }
     
     public override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -164,7 +179,8 @@ extension JMFormViewController: JMFormCellDelegate {
     
     func didTapCell(atIndexPath indexPath: IndexPath) {
         
-        guard let imageItem = form?.sections[indexPath.section].items[indexPath.row] else { return }
+        guard let sections = form?.sections else { return }
+        let imageItem = sections[indexPath.section].items[indexPath.row]
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         
         switch imageItem.cellType {
@@ -176,6 +192,10 @@ extension JMFormViewController: JMFormCellDelegate {
                 imageItem.setValue(value: image)
                 self?.tableView.reloadData()
             }
+            
+        case .datePicker:
+            tableView.beginUpdates()
+            tableView.endUpdates()
             
         // TODO
         case .listSelection: break

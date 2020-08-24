@@ -13,12 +13,18 @@ protocol JMFormUpdatable {
     func update(withForm item: JMFormItem)
 }
 
+protocol JMFormExpandable {
+    var expanded: Bool {get}
+    var unexpandedHeight: CGFloat {get}
+    func getCellHeight() -> CGFloat
+}
+
 public protocol JMFormItemDelegate {
     func setAsFirstResponder()
 }
 
 /// Different types of items supported by JMForm
-public enum JMFormItemType {
+public enum JMFormItemTextFieldType {
     case firstName
     case lastName
     case email
@@ -27,8 +33,12 @@ public enum JMFormItemType {
     case age
     case postalCode
     case phone
-    case image
-    case selection
+}
+
+public enum JMFormItemDatePickerType {
+    case date
+    case time
+    case dateTime
 }
 
 /// ViewModel to display and react to text events, to update data

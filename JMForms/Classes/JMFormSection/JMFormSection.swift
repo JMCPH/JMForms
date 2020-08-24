@@ -9,7 +9,7 @@
 import UIKit
 
 public struct JMFormSection {
-    let items: [JMFormItem]
+    var items: [JMFormItem]
     let title: String?
     var isCollapsed: Bool
     
