@@ -8,12 +8,12 @@
 
 // Types of validation JMForm can perform
 public enum JMFormValidator {
-    case email
-    case equalEmail(item: JMFormItem)
-    case name
-    case age
-    case password(minimumCount: Int)
-    case url
-    case numeric
-    case image
+    case email(errorString: String)
+    case equalEmail(item: JMFormItem, errorString: String)
+    case name(errorString: String)
+    case age(errorString: String)
+    case password(minimumCount: Int, errorString: String)
+    case url(errorString: String)
+    case numeric(errorString: String)
+    case image(errorString: String)
 }

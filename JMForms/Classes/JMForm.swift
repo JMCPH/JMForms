@@ -21,9 +21,18 @@ public struct JMFormValidation {
 class JMForm {
     
     private(set) var sections = [JMFormSection]()
-
+    private(set) var previouslyVisibleSections = [JMFormSection]()
+    public var visibleSections: [JMFormSection] {
+        return sections.filter { $0.isVisible }
+    }
+    
     public func setup(withSections sections: [JMFormSection]) {
         self.sections = sections
+        self.previouslyVisibleSections = visibleSections
+    }
+    
+    public func reload() {
+        
     }
     
     var value: [String: Any] {
@@ -60,5 +69,32 @@ class JMForm {
         nextItem.delegate?.setAsFirstResponder()
         
     }
+    
+    func reloadSections() {
+        UIView.setAnimationsEnabled(false)
+        tableView.beginUpdates()
+        for index in sections.indices {
+            let section = sections[index]
+            let newIndex = visibleSections.index(of: section)
+            let oldIndex = previouslyVisibleSections.index(of: section)
+            switch (newIndex, oldIndex) {
+            case (nil, nil), (.some, .some): break
+            case let (newIndex?, nil):
+                tableView.insertSections([newIndex], with: .automatic)
+            case let (nil, oldIndex?):
+                tableView.deleteSections([oldIndex], with: .automatic)
+            }
+            if let i = newIndex {
+                let footer = tableView.footerView(forSection: i)
+                footer?.textLabel?.text = tableView(tableView, titleForFooterInSection: i)
+                footer?.setNeedsLayout()
+            }
+            
+        }
+        tableView.endUpdates()
+        UIView.setAnimationsEnabled(true)
+        previouslyVisibleSections = visibleSections
+    }
+    
 
 }

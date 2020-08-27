@@ -9,36 +9,12 @@
 import UIKit
 
 /// Conform the view receiver to be updated with a form item
-protocol JMFormUpdatable {
+public protocol JMFormUpdatable {
     func update(withForm item: JMFormItem)
-}
-
-protocol JMFormExpandable {
-    var expanded: Bool {get}
-    var unexpandedHeight: CGFloat {get}
-    func getCellHeight() -> CGFloat
 }
 
 public protocol JMFormItemDelegate {
     func setAsFirstResponder()
-}
-
-/// Different types of items supported by JMForm
-public enum JMFormItemTextFieldType {
-    case firstName
-    case lastName
-    case email
-    case password
-    case newPassword
-    case age
-    case postalCode
-    case phone
-}
-
-public enum JMFormItemDatePickerType {
-    case date
-    case time
-    case dateTime
 }
 
 /// ViewModel to display and react to text events, to update data
@@ -52,10 +28,10 @@ public class JMFormItem {
     /// The type of cell this form item should use
     public let cellType: JMFormCellType?
     
-    /// The value of the item - is calling valueCompletion() with the new value - important to be
+    /// The value of the item - is calling didSetValue() with the new value - important to be
     private var value: Any? {
         didSet {
-            self.valueCompletion?(value)
+            self.didSetValue?(value)
         }
     }
     
@@ -69,8 +45,8 @@ public class JMFormItem {
     /// This list of options when selecting
     private(set) var options: [Any]?
     
-    /// The ValueCompletion block is executed everytime the 'value' variable is being set.
-    var valueCompletion: ((_ value: Any?) -> Void)?
+    /// The didSetValue block is executed everytime the 'value' variable is being set.
+    public var didSetValue: ((_ value: Any?) -> Void)?
     
     /// The DidTapCell block is executed to tell if the UITableViewCell is being tapped, to e.g. expand the cell. This is used in the JMFormDatePickerCell.
     public var didTapCell: (() -> Void)?
@@ -97,7 +73,7 @@ public class JMFormItem {
         self.placeholderText = placeholderText
         self.value = value
         self.validator = validator
-        self.isRequired = true
+        self.isRequired = isRequired
     }
     
     public func setOptions(options: [Any]?) {

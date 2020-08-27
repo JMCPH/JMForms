@@ -8,12 +8,21 @@
 
 import UIKit
 
-class JMFormSwitchCell: JMFormTableViewCell {
+open class JMFormSwitchCell: JMFormTableViewCell {
+    
+    public struct Config {
+        let tintColor: UIColor
+        let onTintColor: UIColor
+        let backgroundColor: UIColor
+        public init(tintColor: UIColor, onTintColor: UIColor, backgroundColor: UIColor) {
+            self.tintColor = tintColor
+            self.onTintColor = onTintColor
+            self.backgroundColor = backgroundColor
+        }
+    }
 
     private var titleLabel: UILabel = {
         let l = UILabel(frame: .zero)
-        l.font = UIFont.systemFont(ofSize: 12)
-        l.textColor = UIColor(r: 54, g: 54, b: 54)
         l.numberOfLines = 0
         return l
     }()
@@ -21,8 +30,7 @@ class JMFormSwitchCell: JMFormTableViewCell {
     private let switcher: UISwitch = {
         let s = UISwitch(frame: .zero)
         s.layer.cornerRadius = 16
-        s.tintColor = UIColor(r: 233, g: 233, b: 233)
-        s.backgroundColor = UIColor(r: 233, g: 233, b: 233)
+        s.backgroundColor = .clear
         return s
     }()
     
@@ -39,7 +47,7 @@ class JMFormSwitchCell: JMFormTableViewCell {
         switcher.addTarget(self, action: #selector(didSwitch), for: .valueChanged)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -54,7 +62,7 @@ class JMFormSwitchCell: JMFormTableViewCell {
         
         switcher.translatesAutoresizingMaskIntoConstraints = false
         switcher.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        switcher.widthAnchor.constraint(equalToConstant: 51).isActive = true
+        switcher.widthAnchor.constraint(equalToConstant: 49).isActive = true
         switcher.heightAnchor.constraint(equalToConstant: 31).isActive = true
         switcher.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
         
@@ -68,13 +76,25 @@ class JMFormSwitchCell: JMFormTableViewCell {
 
 extension JMFormSwitchCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
+    public func update(withForm item: JMFormItem) {
         self.item = item
-        self.titleLabel.text = item.titleText
+        titleLabel.text = item.titleText
+        
+        // Update the UI based on Appearence
+        titleLabel.font = item.appearance.titleFont
+        titleLabel.textColor = item.appearance.titleColor
         
         // Setup the text to be the value of the item
         let isOn: Bool = item.getValue() ?? false
-        self.switcher.setOn(isOn, animated: false)
+        switcher.setOn(isOn, animated: false)
+        
+        switch item.cellType {
+        case .switcher(let config):
+            switcher.tintColor = config.tintColor
+            switcher.onTintColor = config.onTintColor
+            switcher.backgroundColor = config.backgroundColor
+        default: break
+        }
         
     }
     

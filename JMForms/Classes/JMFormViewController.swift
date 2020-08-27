@@ -15,27 +15,20 @@ open class JMFormViewController: UITableViewController {
         case invalid(String)
     }
     
-    private var form: JMForm? = JMForm()
+    private let form = JMForm()
     
     public var validation: ValidationState {
-        guard let validation = form?.validate() else { return .invalid("") }
+        let validation = form.validate()
         return validation.isValid ? .valid : .invalid(validation.errorString ?? "")
     }
 
     public var values: [String: Any]? {
-        return form?.value
+        return form.value
     }
-    
-    deinit {
-        form = nil
-    }
-
-    private var imagePicker: JMImagePicker?
-    private var selectionPicker: JMListSelectionController?
     
     // MARK: - Setup the JMFormViewController
     
-    public func setupForm(_ sections: JMFormSection...) {
+    public func setupForm(_ sections: JMFormSection...) {//, withAppearence appearence: JMFormItemAppearance) {
         
         // JMForm - Register all the form cells for this tableview
         JMFormCellType.registerCells(for: tableView)
@@ -43,8 +36,11 @@ open class JMFormViewController: UITableViewController {
         // Setup keyboard observers
         setupKeyboardObservers()
         
+        // Set the appearence to the items in the section
+        // sections.forEach { $0.items.forEach { $0.appearance = appearence }}
+        
         // Set the sections for this form.
-        form?.setup(withSections: sections)
+        form.setup(withSections: sections)
         
         // Setup the UI of the tableView
         setupTableView()
@@ -52,18 +48,42 @@ open class JMFormViewController: UITableViewController {
         // Reload the tableview
         tableView.reloadData()
         
-        // Setup image picker
-        imagePicker = JMImagePicker(presentationController: self)
+    }
+    
+    public func reloadForm() {
+        
+        UIView.setAnimationsEnabled(false)
+        tableView.beginUpdates()
+        for index in form.sections.indices {
+            let section = form.sections[index]
+            let newIndex = form.visibleSections.firstIndex(of: section)
+            let oldIndex = form.previouslyVisibleSections.firstIndex(of: section)
+            switch (newIndex, oldIndex) {
+            case (nil, nil), (.some, .some): break
+            case let (newIndex?, nil):
+                tableView.insertSections([newIndex], with: .automatic)
+            case let (nil, oldIndex?):
+                tableView.deleteSections([oldIndex], with: .automatic)
+            }
+            if let i = newIndex {
+                let footer = tableView.footerView(forSection: i)
+                footer?.textLabel?.text = tableView(tableView, titleForFooterInSection: i)
+                footer?.setNeedsLayout()
+            }
+            
+        }
+        tableView.endUpdates()
+        UIView.setAnimationsEnabled(true)
+        form.previouslyVisibleSections = form.visibleSections
         
     }
     
     public func didFinishItem(withTag tag: String) {
-        form?.didFinishItem(withTag: tag)
+        form.didFinishItem(withTag: tag)
     }
     
     private func setupTableView() {
         tableView.register(JMFormSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "header")
-        tableView.contentInset.top = 50
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.showsVerticalScrollIndicator = false
@@ -103,20 +123,21 @@ open class JMFormViewController: UITableViewController {
 
     }
     
+    
     // MARK: - Table view data source
 
     public override func numberOfSections(in tableView: UITableView) -> Int {
-        return form?.sections.count ?? 0
+        return form.visibleSections.count
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (form?.sections[section].isCollapsed ?? false) ? 0 : form?.sections[section].items.count ?? 0
+        return form.visibleSections[section].items.count
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Get the _item_ in the section and set the indexpath, to be able to reload this specific item.
-        guard let item = form?.sections[indexPath.section].items[indexPath.row] else { return UITableViewCell() }
+        let item = form.sections[indexPath.section].items[indexPath.row]
         
         guard let cellType = item.cellType else { return UITableViewCell() }
         guard let cell = cellType.dequeueCell(for: tableView, at: indexPath) as? JMFormTableViewCell else { fatalError() }
@@ -130,22 +151,7 @@ open class JMFormViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    
-//        // Only check if the type is .datePicker
-//        guard let type = form?.sections[indexPath.section].items[indexPath.row].cellType else {
-//            return UITableView.automaticDimension
-//        }
-//
-//        switch type {
-//        case .datePicker:
-//            if let dateCell = tableView.cellForRow(at: indexPath) as? JMFormExpandable {
-//                return dateCell.getCellHeight()
-//            }
-//        default: break
-//        }
-//
         return UITableView.automaticDimension
-        
     }
     
     public override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -153,19 +159,21 @@ open class JMFormViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerTitle = form?.sections[section].title else { return UIView() }
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? JMFormSectionHeaderView else { return nil }
-        header.titleLabel.text = headerTitle
+        let sectionItem = form.sections[section]
+        header.titleLabel.text = sectionItem.title
+        header.titleLabel.textColor = sectionItem.titleColor
+        header.titleLabel.font = sectionItem.titleFont
         return header
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard form?.sections[section].title != nil else { return 1 }
-        return 20
+        guard form.sections[section].title != nil else { return 1 }
+        return form.sections[section].headerHeight
     }
     
     public override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
+        return form.sections[section].footerHeight
     }
     
 }
@@ -173,29 +181,39 @@ open class JMFormViewController: UITableViewController {
 extension JMFormViewController: JMFormCellDelegate {
     
     func didFinishCell(atIndexPath indexPath: IndexPath) {
-        guard let item = form?.sections[indexPath.section].items[indexPath.row] else { return }
-        form?.didFinishItem(withTag: item.tag)
+        let item = form.sections[indexPath.section].items[indexPath.row]
+        form.didFinishItem(withTag: item.tag)
     }
     
     func didTapCell(atIndexPath indexPath: IndexPath) {
         
-        guard let sections = form?.sections else { return }
-        let imageItem = sections[indexPath.section].items[indexPath.row]
+        let formItem = form.sections[indexPath.section].items[indexPath.row]
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         
-        switch imageItem.cellType {
+        switch formItem.cellType {
         case .image:
             
             // Display the JMImagePicker and set the image as value
-            imagePicker?.present(from: cell)
-            imagePicker?.didSelectImage = { [weak self] (image) in
-                imageItem.setValue(value: image)
+            let imagePicker = JMImagePicker(presentationController: self)
+            imagePicker.present(from: cell)
+            imagePicker.didSelectImage = { [weak self] (image) in
+                formItem.setValue(value: image)
                 self?.tableView.reloadData()
             }
             
-        case .datePicker:
-            tableView.beginUpdates()
-            tableView.endUpdates()
+        case .actionSheet:
+            guard let options = formItem.options as? [String] else {
+                debugPrint("[ERROR] - The options are not strings.")
+                return
+            }
+            
+            // Display the JMActionSheet and set the string as value
+            let actionSheet = JMActionSheet(presentationController: self, title: formItem.titleText, message: formItem.placeholderText, options: options)
+            actionSheet.present(from: cell)
+            actionSheet.didSelectValue = { [weak self] (string) in
+                formItem.setValue(value: string)
+                self?.tableView.reloadData()
+            }
             
         // TODO
         case .listSelection: break

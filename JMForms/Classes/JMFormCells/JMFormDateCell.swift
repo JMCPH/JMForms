@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JMFormDateCell: JMFormTableViewCell, JMFormExpandable {
+open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
     
     private var titleLabel: UILabel = {
         let l = UILabel(frame: .zero)
@@ -19,15 +19,11 @@ class JMFormDateCell: JMFormTableViewCell, JMFormExpandable {
     
     private var datePickerContainer = UIView()
     private let datePicker = UIDatePicker(frame: .zero)
-    private var dateFormatter: DateFormatter!
+    private lazy var dateFormatter = DateFormatter()
     
-    var expanded = false
-    var unexpandedHeight: CGFloat = 50
+    public var expanded = false
+    public var unexpandedHeight: CGFloat = 50
     private var heightConstraint: NSLayoutConstraint!
-    
-    deinit {
-        gestureRecognizers?.removeAll()
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,7 +47,7 @@ class JMFormDateCell: JMFormTableViewCell, JMFormExpandable {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCell)))
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -116,7 +112,7 @@ class JMFormDateCell: JMFormTableViewCell, JMFormExpandable {
     }
     
     // Only for expandable cells
-    func getCellHeight() -> CGFloat {
+    public func getCellHeight() -> CGFloat {
         let expandedHeight = unexpandedHeight + CGFloat(datePicker.frame.size.height)
         return expanded ? expandedHeight : unexpandedHeight
     }
@@ -125,27 +121,27 @@ class JMFormDateCell: JMFormTableViewCell, JMFormExpandable {
 
 extension JMFormDateCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
+    public func update(withForm item: JMFormItem) {
         self.item = item
-        self.titleLabel.text = item.titleText
+        titleLabel.text = item.titleText
+        
+        // Update the UI based on Appearence
+        titleLabel.font = item.appearance.titleFont
+        titleLabel.textColor = item.appearance.titleColor
         
         // Set the correct dateformatter and datepicker mode.
         switch item.cellType {
         case .datePicker(let mode):
-            self.datePicker.datePickerMode = mode
+            datePicker.datePickerMode = mode
+            datePicker.timeZone = TimeZone(abbreviation: "UTC")
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             switch mode {
             case .date:
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-                self.dateFormatter = dateFormatter
             case .time:
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "HH:mm"
-                self.dateFormatter = dateFormatter
             case .dateAndTime:
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-                self.dateFormatter = dateFormatter
             case .countDownTimer: break
             @unknown default: break
             }

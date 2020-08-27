@@ -8,7 +8,11 @@
 
 import UIKit
 
-// TODO: Add an expandable protocol for the cells.
+public protocol JMFormCellExpandable {
+    var expanded: Bool {get}
+    var unexpandedHeight: CGFloat {get}
+    func getCellHeight() -> CGFloat
+}
 
 /// Conform receiver to have a form item property
 protocol JMFormCell {
@@ -22,7 +26,7 @@ protocol JMFormCellDelegate: class {
     func didTapCell(atIndexPath indexPath: IndexPath)
 }
 
-class JMFormTableViewCell: UITableViewCell, JMFormCell {
+open class JMFormTableViewCell: UITableViewCell, JMFormCell {
     var indexPath: IndexPath = []
     weak var delegate: JMFormCellDelegate?
     weak var item: JMFormItem?
@@ -30,14 +34,7 @@ class JMFormTableViewCell: UITableViewCell, JMFormCell {
     deinit {
         item = nil
         delegate = nil
+        gestureRecognizers?.removeAll()
     }
-    
-//    func setup() {
-//
-//        selectionStyle = .none
-//        contentView.backgroundColor = .clear
-//        backgroundColor = .clear
-//        backgroundView?.backgroundColor = .clear
-//
-//    }
+
 }

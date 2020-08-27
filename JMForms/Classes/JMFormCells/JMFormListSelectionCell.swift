@@ -7,27 +7,19 @@
 
 import UIKit
 
-class JMFormListSelectionCell: JMFormTableViewCell {
+open class JMFormListSelectionCell: JMFormTableViewCell {
 
     private var titleLabel: UILabel = {
         let l = UILabel(frame: .zero)
-        l.font = UIFont.systemFont(ofSize: 12)
-        l.textColor = UIColor(r: 54, g: 54, b: 54)
         l.numberOfLines = 0
         return l
     }()
     
     private var valueLabel: UILabel = {
         let l = UILabel(frame: .zero)
-        l.font = UIFont.systemFont(ofSize: 14)
-        l.textColor = UIColor(r: 54, g: 54, b: 54)
         l.numberOfLines = 0
         return l
     }()
-    
-    deinit {
-        gestureRecognizers?.removeAll()
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,7 +34,7 @@ class JMFormListSelectionCell: JMFormTableViewCell {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCell)))
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -71,10 +63,17 @@ class JMFormListSelectionCell: JMFormTableViewCell {
 
 extension JMFormListSelectionCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
+    public func update(withForm item: JMFormItem) {
         self.item = item
-        self.titleLabel.text = item.titleText
-        self.valueLabel.text = item.getValue()
+        titleLabel.text = item.titleText
+        valueLabel.text = item.getValue()
+        
+        // Update the UI based on Appearence
+        titleLabel.font = item.appearance.titleFont
+        titleLabel.textColor = item.appearance.titleColor
+        valueLabel.font = item.appearance.valueFont
+        valueLabel.textColor = item.appearance.valueColor
+        
     }
     
 }

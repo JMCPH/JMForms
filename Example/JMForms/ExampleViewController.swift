@@ -11,6 +11,12 @@ import JMForms
 
 public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
+    public var shadowRadius: CGFloat = 4.0
+    
+    public var shadowColor: CGColor = UIColor(red: 224/255.0, green: 224/255.0, blue: 224/255.0, alpha: 0.5).cgColor
+    
+    public var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0)
+    
     public var backgroundColor: UIColor = .clear
     
     public var titleColor: UIColor = .black
@@ -21,7 +27,7 @@ public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
     public var placeholderColor: UIColor = .lightGray
     
-    public var borderColorInActive: UIColor? = UIColor.lightGray
+    public var borderColorInActive: UIColor? = UIColor(red: 237/255.0, green: 237/255.0, blue: 237/255.0, alpha: 1.0)
     
     public var borderColorActive: UIColor? = .blue
     
@@ -31,7 +37,6 @@ public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
     public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 15)
     
-    public init() { }
 }
 
 
@@ -56,23 +61,38 @@ class ExampleViewController: JMFormViewController {
         // Setup tableview footer view.
         setupFooterView()
         
+        // Custom content inset
+        tableView.contentInset.top = 50
+        
     }
     
     private func setupForm() {
         
-        let firstName = JMFormItem(tag: "firstName", cellType: .textfield(type: .firstName), placeholderText: "Enter your first name", validator: .name)
-        let lastName = JMFormItem(tag: "lastName", cellType: .textfield(type: .lastName), placeholderText: "Enter your last name", validator: .name)
-        let image = JMFormItem(tag: "image", cellType: .image, titleText: "Select image", value: nil, validator: .image)
+        // Register cells for tableview.
+        JMFormCellType.registerCells(for: tableView, withCustomCells: [JMCustomTableViewCell.self])
+        
+        let firstName = JMFormItem(tag: "firstName", cellType: .textfield(type: .firstName), placeholderText: "Enter your first name", validator: .name(errorString: "Please type in a valid name."))
+        let lastName = JMFormItem(tag: "lastName", cellType: .textfield(type: .lastName), placeholderText: "Enter your last name", validator: .name(errorString: "Please type in a valid name."))
+        let image = JMFormItem(tag: "image", cellType: .image, titleText: "Select image", value: nil, validator: .image(errorString: "Please add an image"))
         let biography = JMFormItem(tag: "biography", cellType: .textView, placeholderText: "Enter your bio", validator: nil)
-        let email = JMFormItem(tag: "email", cellType: .textfield(type: .email), placeholderText: "Enter your email", validator: .email)
-        let confirmEmail = JMFormItem(tag: "confirmEmail", cellType: .textfield(type: .email), placeholderText: "Confirm your email", validator: .equalEmail(item: email))
-        let password = JMFormItem(tag: "password", cellType: .textfield(type: .newPassword), placeholderText: "Enter your password", validator: .password(minimumCount: 6))
-        let age = JMFormItem(tag: "age", cellType: .textfield(type: .age), placeholderText: "Enter your age", validator: .age)
-        let termsAndConditions = JMFormItem(tag: "terms", cellType: .switcher, titleText: "I accept the terms and conditions of using the JMForms example project.", validator: nil)
-
+        let email = JMFormItem(tag: "email", cellType: .textfield(type: .email), placeholderText: "Enter your email", validator: .email(errorString: ""))
+        let confirmEmail = JMFormItem(tag: "confirmEmail", cellType: .textfield(type: .email), placeholderText: "Confirm your email", validator: .equalEmail(item: email, errorString: "Emails does not match."))
+        let password = JMFormItem(tag: "password", cellType: .textfield(type: .newPassword), placeholderText: "Enter your password", validator: .password(minimumCount: 6, errorString: "Please type in a valid password"))
+        let age = JMFormItem(tag: "age", cellType: .textfield(type: .age), placeholderText: "Enter your age", validator: .age(errorString: "Please type in a valid age."))
+        
+        let switchConfig = JMFormSwitchCell.Config(tintColor: .lightGray, onTintColor: .blue, backgroundColor: .lightGray)
+        let termsAndConditions = JMFormItem(tag: "terms", cellType: .switcher(config: switchConfig), titleText: "I accept the terms and conditions of using the JMForms example project.", validator: nil)
+        
+        let sliderConfig = JMFormSliderCell.Config(maximumValue: 10, minimumValue: 1, minimumTrackTintColor: .blue, maximumTrackTintColor: .lightGray, valueTextSingle: "Minut", valueTextMultiple: "Minutter")
+        let slider = JMFormItem(tag: "slider", cellType: .slider(config: sliderConfig), titleText: "Indstil antal minutter før")
+        
         let date = JMFormItem(tag: "date", cellType: .datePicker(mode: .date), titleText: "Select date", isRequired: false)
         let time = JMFormItem(tag: "time", cellType: .datePicker(mode: .time), titleText: "Select time", isRequired: false)
         let dateTime = JMFormItem(tag: "dateTime", cellType: .datePicker(mode: .dateAndTime), titleText: "Select date and time", isRequired: false)
+        
+        let testCustom = JMFormItem(tag: "custom", cellType: .custom(identifier: "\(JMCustomTableViewCell.self)"))
+        let actionSheet = JMFormItem(tag: "actionSheet", cellType: .actionSheet, titleText: "Select your favorite animal")
+        actionSheet.setOptions(options: ["🦆", "🐴", "🐒"])
         
         // Setup the sections for the form
         self.setupForm(
@@ -87,7 +107,9 @@ class ExampleViewController: JMFormViewController {
             JMFormSection(items: [date], title: "Select a day", isCollapsed: false),
             JMFormSection(items: [time], title: "Select a time", isCollapsed: false),
             JMFormSection(items: [dateTime], title: "Select both date and time", isCollapsed: false),
-            JMFormSection(items: [termsAndConditions], title: nil, isCollapsed: false)
+            JMFormSection(items: [testCustom], title: "Test custom", isCollapsed: false),
+            JMFormSection(items: [actionSheet], title: "Action sheet", isCollapsed: false),
+            JMFormSection(items: [termsAndConditions, slider], title: nil, isCollapsed: true)
         )
         
     }
@@ -114,7 +136,7 @@ class ExampleViewController: JMFormViewController {
     
     @objc private func submitForm() {
         
-        let destination = ExampleViewController()
+        let destination = ExampleViewController(style: .grouped)
         self.navigationController?.pushViewController(destination, animated: true)
         
         view.endEditing(true)

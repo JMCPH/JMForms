@@ -8,7 +8,19 @@
 
 import UIKit
 
-class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
+open class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
+    
+    /// Different types of items supported by JMFormTextField
+    public enum `Type` {
+        case firstName
+        case lastName
+        case email
+        case password
+        case newPassword
+        case age
+        case postalCode
+        case phone
+    }
     
     public let textField: UITextField = {
         let t = UITextField(frame: .zero)
@@ -17,7 +29,8 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         t.borderStyle = .none
         t.layer.cornerRadius = 3.0
         t.layer.borderWidth = 1.0
-        t.font = UIFont.systemFont(ofSize: 15)
+        t.layer.shadowOpacity = 1.0
+        t.layer.masksToBounds = false
         return t
     }()
     
@@ -38,14 +51,12 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         
     }
     
-    override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         textField.setLeftPaddingPoints(12)
-        
-        textField.layer.masksToBounds = false
-        textField.layer.shadowRadius = 4.0
-        textField.layer.shadowColor = UIColor(r: 224, g: 224, b: 224, a: 0.5).cgColor
-        textField.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        textField.layer.shadowOpacity = 1.0
+        guard let appearence = item?.appearance else { return }
+        textField.layer.shadowRadius = appearence.shadowRadius
+        textField.layer.shadowColor = appearence.shadowColor
+        textField.layer.shadowOffset = appearence.shadowOffset
     }
     
     public func defineLayout() {
@@ -57,19 +68,20 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
     }
     
-    override func prepareForReuse() {
+    open override func prepareForReuse() {
         super.prepareForReuse()
         textField.text = nil
         textField.attributedPlaceholder = nil
+        textField.layer.borderColor = item?.appearance.borderColorInActive?.cgColor
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         delegate?.didFinishCell(atIndexPath: indexPath)
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         
         // Remove placeholder if begin editing
         textField.placeholder = nil
@@ -78,7 +90,7 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         textField.layer.borderColor = item?.appearance.borderColorActive?.cgColor
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         guard let appearance = item?.appearance else { return }
         
         // Add inactive border color
@@ -103,7 +115,7 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -111,20 +123,24 @@ class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
 
 extension JMFormTextFieldCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
+    public func update(withForm item: JMFormItem) {
         self.item = item
         self.item?.delegate = self
         
         // Setup the text to be the value of the item
-        self.textField.text = item.getValue()
+        textField.text = item.getValue()
+        
+        // Update the UI based on Appearence
+        textField.font = item.appearance.titleFont
+        textField.textColor = item.appearance.titleColor
         
         // Setup the UI of the textfield
-        self.setupTextFieldUI()
+        setupTextFieldUI()
         
         // Setup the subclass cell
         switch item.cellType {
             case .textfield(let type):
-                self.setupTextField(withType: type)
+                setupTextField(withType: type)
             
             default: break
         }
@@ -135,7 +151,7 @@ extension JMFormTextFieldCell: JMFormUpdatable {
 
 extension JMFormTextFieldCell: JMFormItemDelegate {
     
-    func setAsFirstResponder() {
+    public func setAsFirstResponder() {
         textField.becomeFirstResponder()
     }
     
@@ -146,7 +162,7 @@ extension JMFormTextFieldCell: JMFormItemDelegate {
 
 extension JMFormTextFieldCell {
     
-    private func setupTextField(withType type: JMFormItemTextFieldType?) {
+    private func setupTextField(withType type: Type?) {
         guard let type = type else { return }
         
         switch type {

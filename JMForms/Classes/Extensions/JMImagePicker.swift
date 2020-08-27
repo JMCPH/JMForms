@@ -7,10 +7,6 @@
 
 import UIKit
 
-public protocol JMImagePickerDelegate: class {
-    func didSelect(image: UIImage?)
-}
-
 open class JMImagePicker: NSObject {
 
     private let pickerController: UIImagePickerController

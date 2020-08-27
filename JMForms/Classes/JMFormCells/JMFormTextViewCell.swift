@@ -8,18 +8,16 @@
 
 import UIKit
 
-class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
+open class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
     
     let textView: UITextView = {
         let t = UITextView(frame: .zero)
-        t.textColor = UIColor(r: 54, g: 54, b: 54)
         t.isScrollEnabled = false
         t.layer.cornerRadius = 3.0
         t.layer.borderWidth = 1.0
         t.textContainerInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         t.textContainer.maximumNumberOfLines = 3
         t.textContainer.lineFragmentPadding = 0
-        t.font = UIFont.systemFont(ofSize: 15)
         return t
     }()
     
@@ -39,7 +37,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         textView.delegate = self
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -54,7 +52,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
     }
     
-    override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         textView.layer.masksToBounds = false
         textView.layer.shadowRadius = 4.0
         textView.layer.shadowColor = UIColor(r: 224, g: 224, b: 224, a: 0.5).cgColor
@@ -62,16 +60,16 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         textView.layer.shadowOpacity = 1.0
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        guard textView.textColor != .black else { return }
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+        guard textView.textColor != item?.appearance.titleColor else { return }
         textView.text = nil
-        textView.textColor = .black
+        textView.textColor = item?.appearance.titleColor
         
         // Add active border color
         textView.layer.borderColor = item?.appearance.borderColorActive?.cgColor
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         
         // Check for StringValue
         if let text = textView.text {
@@ -84,11 +82,11 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         // Show placeholder text and color if empty
         guard textView.text.isEmpty else { return }
         textView.text = item?.placeholderText
-        textView.textColor = .lightGray
+        textView.textColor = item?.appearance.placeholderColor
         
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
         guard text == "\n" else {
             
@@ -112,7 +110,7 @@ class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
 
 extension JMFormTextViewCell: JMFormItemDelegate {
     
-    func setAsFirstResponder() {
+    public func setAsFirstResponder() {
         textView.becomeFirstResponder()
     }
     
@@ -120,24 +118,24 @@ extension JMFormTextViewCell: JMFormItemDelegate {
 
 extension JMFormTextViewCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
+    public func update(withForm item: JMFormItem) {
         self.item = item
         self.item?.delegate = self
         
-        guard let appearance = self.item?.appearance else { return }
-        
         // Show value
-        if let value: String = self.item?.getValue(), !value.isEmpty {
+        if let value: String = item.getValue(), !value.isEmpty {
             textView.text = value
-            textView.textColor = .black
+            textView.textColor = item.appearance.titleColor
         }
         // Show placeholder
         else {
             textView.text = item.placeholderText
-            textView.textColor = .lightGray
+            textView.textColor = item.appearance.placeholderColor
         }
         
-        textView.layer.borderColor = textView.isFirstResponder ? appearance.borderColorActive?.cgColor : appearance.borderColorInActive?.cgColor
+        // Update the UI based on Appearence
+        textView.font = item.appearance.titleFont
+        textView.layer.borderColor = textView.isFirstResponder ? item.appearance.borderColorActive?.cgColor : item.appearance.borderColorInActive?.cgColor
         
         
     }

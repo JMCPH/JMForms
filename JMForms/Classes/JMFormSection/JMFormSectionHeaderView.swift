@@ -11,12 +11,7 @@ import UIKit
 
 class JMFormSectionHeaderView: UITableViewHeaderFooterView {
 
-    public let titleLabel: UILabel = {
-        let l = UILabel(frame: .zero)
-        l.font = UIFont.systemFont(ofSize: 12)
-        l.textColor = UIColor.black
-        return l
-    }()
+    public let titleLabel: UILabel = UILabel(frame: .zero)
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)

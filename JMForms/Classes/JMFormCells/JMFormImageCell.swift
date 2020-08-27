@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JMFormImageCell: JMFormTableViewCell {
+open class JMFormImageCell: JMFormTableViewCell {
 
     private var titleLabel: UILabel = {
         let l = UILabel(frame: .zero)
@@ -24,10 +24,6 @@ class JMFormImageCell: JMFormTableViewCell {
         return s
     }()
     
-    deinit {
-        gestureRecognizers?.removeAll()
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,7 +37,7 @@ class JMFormImageCell: JMFormTableViewCell {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCell)))
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -70,16 +66,20 @@ class JMFormImageCell: JMFormTableViewCell {
 
 extension JMFormImageCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
+    public func update(withForm item: JMFormItem) {
         self.item = item
-        self.titleLabel.text = item.titleText
+        titleLabel.text = item.titleText
+        
+        // Update the UI based on Appearence
+        titleLabel.font = item.appearance.titleFont
+        titleLabel.textColor = item.appearance.titleColor
         
         // Set the imageV view
         if let image = item.getAnyValue() as? UIImage {
             imageV.image = image
             imageV.backgroundColor = nil
         } else {
-            imageV.backgroundColor = .blue
+            imageV.backgroundColor = .lightGray
         }
         
     }
