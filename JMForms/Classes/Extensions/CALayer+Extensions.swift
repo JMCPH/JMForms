@@ -6,13 +6,9 @@
 //  Copyright © 2019 Codement. All rights reserved.
 //
 
-import UIKit
-
-import UIKit
-
 extension CALayer {
     
-    func addBorder(_ edge: UIRectEdge, color: UIColor, thickness: CGFloat, widthInset: CGFloat = 0.0) {
+    func addBorder(_ edge: UIRectEdge, color: UIColor, thickness: CGFloat, edgeInset: UIEdgeInsets = .zero) {
         
         sublayers?.removeAll(where: { $0.name == "custom_border_layer" })
         
@@ -24,7 +20,7 @@ extension CALayer {
         case UIRectEdge.top:
             border.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: thickness)
         case UIRectEdge.bottom:
-            border.frame = CGRect(x: widthInset, y: self.frame.height - thickness, width: self.frame.width - (widthInset * 2), height: thickness)
+            border.frame = CGRect(x: edgeInset.left, y: self.frame.height - thickness, width: self.frame.width - edgeInset.right, height: thickness)
         case UIRectEdge.left:
             border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
         case UIRectEdge.right:
@@ -37,4 +33,3 @@ extension CALayer {
     }
     
 }
-

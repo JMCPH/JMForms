@@ -35,6 +35,10 @@ public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
     public var valueFont: UIFont = UIFont.systemFont(ofSize: 15)
     
+    public var detailFont: UIFont = UIFont.systemFont(ofSize: 13)
+    
+    public var detailColor: UIColor = .lightGray
+    
     public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 15)
     
 }

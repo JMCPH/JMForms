@@ -173,7 +173,7 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
     
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-        contentView.layer.addBorder(.bottom, color: heightConstraint.constant == unexpandedHeight ? UIColor(r: 246, g: 249, b: 252) : UIColor.clear, thickness: 1.0, widthInset: 20)
+        contentView.layer.addBorder(.bottom, color: heightConstraint.constant == unexpandedHeight ? UIColor(r: 246, g: 249, b: 252) : UIColor.clear, thickness: 1.0, edgeInset: .init(top: 0, left: 20, bottom: 0, right: 20))
     }
     
 }

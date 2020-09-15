@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2AE68AF9DBEDB806AB679BFB22718A68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		2BF08400C6DAE3F3A58E551BFA75DE1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		367AF8C5251155F40043F830 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AF8C4251155F30043F830 /* CALayer+Extensions.swift */; };
 		368FEF5E24D36EDA00935498 /* JMFormItemAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368FEF5D24D36EDA00935498 /* JMFormItemAppearence.swift */; };
 		36B3158F24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3158D24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift */; };
 		36B3159024D1D30600BC2EB7 /* JMFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3158E24D1D30600BC2EB7 /* JMFormSection.swift */; };
@@ -68,6 +69,7 @@
 		2F99CB662B4A404E0D167A67675EDE95 /* JMForms-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMForms-umbrella.h"; sourceTree = "<group>"; };
 		30AB7A918FB2E2A03A256A6AA6B7B5D1 /* Pods-JMForms_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JMForms_Example.modulemap"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		367AF8C4251155F30043F830 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		368FEF5D24D36EDA00935498 /* JMFormItemAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemAppearence.swift; sourceTree = "<group>"; };
 		36B3158D24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSectionHeaderView.swift; sourceTree = "<group>"; };
 		36B3158E24D1D30600BC2EB7 /* JMFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSection.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		36B9D73424D06B86006A0D87 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				367AF8C4251155F30043F830 /* CALayer+Extensions.swift */,
 				36B9D73524D06B86006A0D87 /* UIColor+Extensions.swift */,
 				36B9D73624D06B86006A0D87 /* UITextField+Extensions.swift */,
 				36C7D9C724ED619C00383673 /* JMImagePicker.swift */,
@@ -485,6 +488,7 @@
 			files = (
 				36B9D74624D06B86006A0D87 /* UITextField+Extensions.swift in Sources */,
 				36FA5FDE24F6611C0050ECCD /* JMActionSheet.swift in Sources */,
+				367AF8C5251155F40043F830 /* CALayer+Extensions.swift in Sources */,
 				36B9D74524D06B86006A0D87 /* UIColor+Extensions.swift in Sources */,
 				36C7D9CA24ED654A00383673 /* JMFormListSelectionCell.swift in Sources */,
 				36B9D74324D06B86006A0D87 /* JMFormValidator.swift in Sources */,
