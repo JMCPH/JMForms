@@ -52,6 +52,7 @@ extension JMCustomTableViewCell: JMFormUpdatable {
     
     func update(withForm item: JMFormItem) {
         debugPrint("Did set form item")
+        
     }
     
 }

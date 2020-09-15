@@ -17,15 +17,34 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
         return l
     }()
     
+    private var detailLabel: UILabel = {
+        let l = UILabel(frame: .zero)
+        l.font = UIFont.systemFont(ofSize: 12)
+        l.textColor = UIColor(r: 54, g: 54, b: 54)
+        l.numberOfLines = 0
+        l.text = "11. dec. 2020"
+        return l
+    }()
+    
+    private var valueLabel: UILabel = {
+        let l = UILabel(frame: .zero)
+        l.font = UIFont.systemFont(ofSize: 12)
+        l.textColor = UIColor(r: 54, g: 54, b: 54)
+        l.numberOfLines = 0
+        l.text = "20:20"
+        return l
+    }()
+    
     private var datePickerContainer = UIView()
     private let datePicker = UIDatePicker(frame: .zero)
     private lazy var dateFormatter = DateFormatter()
     
     public var expanded = false
-    public var unexpandedHeight: CGFloat = 50
+    public var unexpandedHeight: CGFloat = 55
     private var heightConstraint: NSLayoutConstraint!
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         clipsToBounds = true
@@ -33,10 +52,17 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
         
         // Add subviews
         contentView.addSubview(titleLabel)
-        contentView.addSubview(datePickerContainer)
+        contentView.addSubview(detailLabel)
         
-        datePickerContainer.clipsToBounds = true
-        datePickerContainer.addSubview(datePicker)
+        if #available(iOS 14.0, *) {
+            contentView.addSubview(datePicker)
+            datePicker.clipsToBounds = true
+        } else {
+            contentView.addSubview(valueLabel)
+            contentView.addSubview(datePickerContainer)
+            datePickerContainer.clipsToBounds = true
+            datePickerContainer.addSubview(datePicker)
+        }
         
         // Define layout
         defineLayout()
@@ -53,20 +79,43 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
     
     private func defineLayout() {
         
-        heightConstraint = contentView.heightAnchor.constraint(equalToConstant: 50)
+        heightConstraint = contentView.heightAnchor.constraint(equalToConstant: unexpandedHeight)
         heightConstraint.isActive = true
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-        titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 31).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
-        
         if #available(iOS 14.0, *) {
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            titleLabel.heightAnchor.constraint(equalToConstant: 31).isActive = true
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
+            
+            detailLabel.translatesAutoresizingMaskIntoConstraints = false
+            detailLabel.heightAnchor.constraint(equalToConstant: 31).isActive = true
+            detailLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+            detailLabel.trailingAnchor.constraint(equalTo: datePicker.leadingAnchor, constant: -10).isActive = true
+            
             datePicker.translatesAutoresizingMaskIntoConstraints = false
-            datePicker.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+            datePicker.heightAnchor.constraint(greaterThanOrEqualToConstant: 35).isActive = true
+            datePicker.widthAnchor.constraint(greaterThanOrEqualToConstant: 75).isActive = true
+            datePicker.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
             datePicker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
-            datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+            datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
         } else {
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+            titleLabel.heightAnchor.constraint(equalToConstant: 31).isActive = true
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
+            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10).isActive = true
+            
+            detailLabel.translatesAutoresizingMaskIntoConstraints = false
+            detailLabel.heightAnchor.constraint(equalToConstant: 31).isActive = true
+            detailLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+            detailLabel.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -15).isActive = true
+            
+            valueLabel.translatesAutoresizingMaskIntoConstraints = false
+            valueLabel.heightAnchor.constraint(equalToConstant: 31).isActive = true
+            valueLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+            valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
+            
             datePickerContainer.translatesAutoresizingMaskIntoConstraints = false
             datePickerContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
             datePickerContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -90,16 +139,21 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
             datePicker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
             datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         } else {
-            titleLabel.text = dateFormatter.string(from: sender.date)
+            valueLabel.text = dateFormatter.string(from: sender.date)
         }
         
     }
     
     @objc private func didTapCell() {
+        if #available(iOS 14.0, *) {
+            datePicker.becomeFirstResponder()
+            return
+        }
+        
         expanded = !expanded
         
         UIView.transition(with: titleLabel, duration: 0.25, options:UIView.AnimationOptions.transitionCrossDissolve, animations: { () -> Void in
-            self.titleLabel.textColor = self.expanded ? self.tintColor : self.item?.appearance.titleColor ?? .lightGray
+            self.valueLabel.textColor = self.expanded ? self.tintColor : self.item?.appearance.valueColor ?? .lightGray
         }, completion: nil)
         
         // Update the tableView
@@ -117,6 +171,19 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
         return expanded ? expandedHeight : unexpandedHeight
     }
     
+    open override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        contentView.layer.addBorder(.bottom, color: heightConstraint.constant == unexpandedHeight ? UIColor(r: 246, g: 249, b: 252) : UIColor.clear, thickness: 1.0, widthInset: 20)
+    }
+    
+}
+
+extension JMFormDateCell: JMFormItemDelegate {
+    public func setExpanded(expanded: Bool) {
+        self.expanded = expanded
+    }
+    
+    public func setAsFirstResponder() { }
 }
 
 extension JMFormDateCell: JMFormUpdatable {
@@ -124,10 +191,17 @@ extension JMFormDateCell: JMFormUpdatable {
     public func update(withForm item: JMFormItem) {
         self.item = item
         titleLabel.text = item.titleText
+        detailLabel.text = item.detailText
         
         // Update the UI based on Appearence
         titleLabel.font = item.appearance.titleFont
         titleLabel.textColor = item.appearance.titleColor
+        
+        detailLabel.font = item.appearance.detailFont
+        detailLabel.textColor = item.appearance.detailColor
+        
+        valueLabel.font = item.appearance.valueFont
+        valueLabel.textColor = item.appearance.valueColor
         
         // Set the correct dateformatter and datepicker mode.
         switch item.cellType {
@@ -150,7 +224,7 @@ extension JMFormDateCell: JMFormUpdatable {
         
         // Setup the date to be the value of the item
         if let date: Date = item.getValue() {
-            titleLabel.text = dateFormatter.string(from: date)
+            valueLabel.text = dateFormatter.string(from: date)
             datePicker.setDate(date, animated: false)
         } else {
             datePicker.setDate(Date(), animated: false)

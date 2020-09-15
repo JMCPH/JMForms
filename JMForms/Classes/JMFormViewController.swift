@@ -8,6 +8,12 @@
 
 import UIKit
 
+// MARK: Internal note:
+// Use this to show/hide a section
+//            guard let string = value as? String else { return }
+//            profileNameSection.isVisible = string.count > 0
+//            self?.reloadForm()
+
 open class JMFormViewController: UITableViewController {
     
     public enum ValidationState {
@@ -50,10 +56,12 @@ open class JMFormViewController: UITableViewController {
         
     }
     
+    public func reloadData() {
+        tableView.reloadData()
+    }
+    
     public func reloadForm() {
         
-        UIView.setAnimationsEnabled(false)
-        tableView.beginUpdates()
         for index in form.sections.indices {
             let section = form.sections[index]
             let newIndex = form.visibleSections.firstIndex(of: section)
@@ -61,25 +69,26 @@ open class JMFormViewController: UITableViewController {
             switch (newIndex, oldIndex) {
             case (nil, nil), (.some, .some): break
             case let (newIndex?, nil):
-                tableView.insertSections([newIndex], with: .automatic)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) { [weak self] in
+                    UIView.setAnimationsEnabled(false)
+                    self?.tableView.beginUpdates()
+                    self?.tableView.insertSections([newIndex], with: .automatic)
+                    self?.tableView.endUpdates()
+                    UIView.setAnimationsEnabled(true)
+                }
             case let (nil, oldIndex?):
-                tableView.deleteSections([oldIndex], with: .automatic)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) { [weak self] in
+                    UIView.setAnimationsEnabled(false)
+                    self?.tableView.beginUpdates()
+                    self?.tableView.deleteSections([oldIndex], with: .automatic)
+                    self?.tableView.endUpdates()
+                    UIView.setAnimationsEnabled(true)
+                }
             }
-            if let i = newIndex {
-                let footer = tableView.footerView(forSection: i)
-                footer?.textLabel?.text = tableView(tableView, titleForFooterInSection: i)
-                footer?.setNeedsLayout()
-            }
-            
+
         }
-        tableView.endUpdates()
-        UIView.setAnimationsEnabled(true)
         form.previouslyVisibleSections = form.visibleSections
         
-    }
-    
-    public func didFinishItem(withTag tag: String) {
-        form.didFinishItem(withTag: tag)
     }
     
     private func setupTableView() {
@@ -137,14 +146,14 @@ open class JMFormViewController: UITableViewController {
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Get the _item_ in the section and set the indexpath, to be able to reload this specific item.
-        let item = form.sections[indexPath.section].items[indexPath.row]
+        let item = form.visibleSections[indexPath.section].items[indexPath.row]
         
         guard let cellType = item.cellType else { return UITableViewCell() }
         guard let cell = cellType.dequeueCell(for: tableView, at: indexPath) as? JMFormTableViewCell else { fatalError() }
         cell.indexPath = indexPath
         cell.delegate = self
         
-        guard let formUpdatableCell = cell as? JMFormUpdatable else { fatalError() }
+        guard let formUpdatableCell = cell as? JMFormUpdatable else { return cell } // fatalError() }
         formUpdatableCell.update(withForm: item)
         
         return cell
@@ -160,7 +169,7 @@ open class JMFormViewController: UITableViewController {
     
     public override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? JMFormSectionHeaderView else { return nil }
-        let sectionItem = form.sections[section]
+        let sectionItem = form.visibleSections[section]
         header.titleLabel.text = sectionItem.title
         header.titleLabel.textColor = sectionItem.titleColor
         header.titleLabel.font = sectionItem.titleFont
@@ -168,12 +177,12 @@ open class JMFormViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard form.sections[section].title != nil else { return 1 }
-        return form.sections[section].headerHeight
+        guard form.visibleSections[section].title != nil else { return 0 }
+        return form.visibleSections[section].headerHeight
     }
     
     public override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return form.sections[section].footerHeight
+        return form.visibleSections[section].footerHeight
     }
     
 }
@@ -181,13 +190,13 @@ open class JMFormViewController: UITableViewController {
 extension JMFormViewController: JMFormCellDelegate {
     
     func didFinishCell(atIndexPath indexPath: IndexPath) {
-        let item = form.sections[indexPath.section].items[indexPath.row]
+        let item = form.visibleSections[indexPath.section].items[indexPath.row]
         form.didFinishItem(withTag: item.tag)
     }
     
     func didTapCell(atIndexPath indexPath: IndexPath) {
         
-        let formItem = form.sections[indexPath.section].items[indexPath.row]
+        let formItem = form.visibleSections[indexPath.section].items[indexPath.row]
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         
         switch formItem.cellType {

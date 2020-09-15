@@ -150,6 +150,7 @@ extension JMFormTextFieldCell: JMFormUpdatable {
 }
 
 extension JMFormTextFieldCell: JMFormItemDelegate {
+    public func setExpanded(expanded: Bool) { }
     
     public func setAsFirstResponder() {
         textField.becomeFirstResponder()

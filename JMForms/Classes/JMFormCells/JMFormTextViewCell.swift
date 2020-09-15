@@ -61,7 +61,7 @@ open class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
     }
     
     public func textViewDidBeginEditing(_ textView: UITextView) {
-        guard textView.textColor != item?.appearance.titleColor else { return }
+        guard textView.text == item?.placeholderText else { return }
         textView.text = nil
         textView.textColor = item?.appearance.titleColor
         
@@ -110,10 +110,11 @@ open class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
 
 extension JMFormTextViewCell: JMFormItemDelegate {
     
+    public func setExpanded(expanded: Bool) { }
+    
     public func setAsFirstResponder() {
         textView.becomeFirstResponder()
     }
-    
 }
 
 extension JMFormTextViewCell: JMFormUpdatable {
@@ -126,18 +127,22 @@ extension JMFormTextViewCell: JMFormUpdatable {
         if let value: String = item.getValue(), !value.isEmpty {
             textView.text = value
             textView.textColor = item.appearance.titleColor
+            
+            // Update the UI based on Appearence
+            textView.font = item.appearance.titleFont
+            textView.layer.borderColor = textView.isFirstResponder ? item.appearance.borderColorActive?.cgColor : item.appearance.borderColorInActive?.cgColor
+            
         }
         // Show placeholder
         else {
             textView.text = item.placeholderText
             textView.textColor = item.appearance.placeholderColor
+            
+            // Update the UI based on Appearence
+            textView.font = item.appearance.placeholderFont
+            textView.layer.borderColor = textView.isFirstResponder ? item.appearance.borderColorActive?.cgColor : item.appearance.borderColorInActive?.cgColor
         }
-        
-        // Update the UI based on Appearence
-        textView.font = item.appearance.titleFont
-        textView.layer.borderColor = textView.isFirstResponder ? item.appearance.borderColorActive?.cgColor : item.appearance.borderColorInActive?.cgColor
-        
-        
+           
     }
     
 }

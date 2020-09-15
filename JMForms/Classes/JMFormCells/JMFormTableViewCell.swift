@@ -27,9 +27,9 @@ protocol JMFormCellDelegate: class {
 }
 
 open class JMFormTableViewCell: UITableViewCell, JMFormCell {
-    var indexPath: IndexPath = []
+    public var indexPath: IndexPath = []
     weak var delegate: JMFormCellDelegate?
-    weak var item: JMFormItem?
+    public weak var item: JMFormItem?
     
     deinit {
         item = nil

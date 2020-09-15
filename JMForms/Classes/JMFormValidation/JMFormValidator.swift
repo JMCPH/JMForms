@@ -10,7 +10,7 @@
 public enum JMFormValidator {
     case email(errorString: String)
     case equalEmail(item: JMFormItem, errorString: String)
-    case name(errorString: String)
+    case notEmpty(errorString: String)
     case age(errorString: String)
     case password(minimumCount: Int, errorString: String)
     case url(errorString: String)

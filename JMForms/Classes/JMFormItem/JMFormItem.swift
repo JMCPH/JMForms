@@ -15,6 +15,7 @@ public protocol JMFormUpdatable {
 
 public protocol JMFormItemDelegate {
     func setAsFirstResponder()
+    func setExpanded(expanded: Bool)
 }
 
 /// ViewModel to display and react to text events, to update data
@@ -36,11 +37,9 @@ public class JMFormItem {
     }
     
     // Text of the item
-    private(set) var titleText: String?
-    private(set) var detailText: String?
+    public var titleText: String?
+    public var detailText: String?
     private(set) var placeholderText: String?
-    
-    var isExpanded: Bool = false
     
     /// This list of options when selecting
     private(set) var options: [Any]?
@@ -52,7 +51,7 @@ public class JMFormItem {
     public var didTapCell: (() -> Void)?
     
     /// ViewController is used to display a e.g. options UITableViewController with the 'options' values to be selected.
-    weak var viewController: UIViewController?
+    public weak var viewController: UIViewController?
     
     /// Delegate is used to set the item to becomeFirstResponder e.g. for a UITextField or UITextView.
     public var delegate: JMFormItemDelegate?
@@ -91,5 +90,6 @@ public class JMFormItem {
     public func getAnyValue() -> Any? {
         return value
     }
+    
 }
 

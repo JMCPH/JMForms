@@ -48,7 +48,7 @@ extension JMFormItem: JMFormValidable {
             let isValid = password.count >= minimumCount
             return .init(isValid: isValid, errorString: errorString)
             
-        case .name(let errorString):
+        case .notEmpty(let errorString):
             guard let name: String = getValue(), name.count > 1 else {
                 return .init(isValid: false, errorString: errorString)
             }

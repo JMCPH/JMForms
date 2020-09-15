@@ -14,7 +14,7 @@ public class JMFormSection: Equatable {
     let title: String?
     let titleColor: UIColor
     let titleFont: UIFont
-    var isVisible: Bool
+    public var isVisible: Bool
     var headerHeight: CGFloat
     var footerHeight: CGFloat
     

@@ -18,8 +18,6 @@ protocol JMListSelectionControllerDelegate: class {
 
 class JMListSelectionController: UITableViewController {
     
-    let hapticFeedback = UISelectionFeedbackGenerator()
-    
     public weak var delegate: JMListSelectionControllerDelegate?
     public var options: [Any]?
 
@@ -36,8 +34,6 @@ class JMListSelectionController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hapticFeedback.prepare()
         
         // TableView UI
         tableView.estimatedRowHeight = 25
@@ -75,7 +71,6 @@ class JMListSelectionController: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        hapticFeedback.selectionChanged()
         
         let value = options?[indexPath.row]
         delegate?.didSelect(value: value)

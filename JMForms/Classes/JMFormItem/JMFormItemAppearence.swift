@@ -21,6 +21,9 @@ public protocol JMFormItemAppearance {
     // Color of the valueLabel
     var valueColor: UIColor { get set }
     
+    // Color of the detailLabel
+    var detailColor: UIColor { get set }
+    
     // Color of the placeholder
     var placeholderColor: UIColor { get set }
     
@@ -36,6 +39,7 @@ public protocol JMFormItemAppearance {
     // MARK: - Fonts
     
     var titleFont: UIFont { get set }
+    var detailFont: UIFont { get set }
     var valueFont: UIFont { get set }
     var placeholderFont: UIFont { get set }
     
@@ -52,6 +56,8 @@ public struct JMFormItemAppearanceDefault: JMFormItemAppearance {
     
     public var titleInvalidColor: UIColor = .red
     
+    public var detailColor: UIColor = .black
+    
     public var valueColor: UIColor = .black
     
     public var placeholderColor: UIColor = .lightGray
@@ -67,6 +73,8 @@ public struct JMFormItemAppearanceDefault: JMFormItemAppearance {
     public var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0)
     
     public var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
+    
+    public var detailFont: UIFont = UIFont.systemFont(ofSize: 15)
     
     public var valueFont: UIFont = UIFont.systemFont(ofSize: 15)
     

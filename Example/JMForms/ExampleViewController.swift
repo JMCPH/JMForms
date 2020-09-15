@@ -71,8 +71,8 @@ class ExampleViewController: JMFormViewController {
         // Register cells for tableview.
         JMFormCellType.registerCells(for: tableView, withCustomCells: [JMCustomTableViewCell.self])
         
-        let firstName = JMFormItem(tag: "firstName", cellType: .textfield(type: .firstName), placeholderText: "Enter your first name", validator: .name(errorString: "Please type in a valid name."))
-        let lastName = JMFormItem(tag: "lastName", cellType: .textfield(type: .lastName), placeholderText: "Enter your last name", validator: .name(errorString: "Please type in a valid name."))
+        let firstName = JMFormItem(tag: "firstName", cellType: .textfield(type: .firstName), placeholderText: "Enter your first name", validator: .notEmpty(errorString: "Please type in a valid name."))
+        let lastName = JMFormItem(tag: "lastName", cellType: .textfield(type: .lastName), placeholderText: "Enter your last name", validator: .notEmpty(errorString: "Please type in a valid name."))
         let image = JMFormItem(tag: "image", cellType: .image, titleText: "Select image", value: nil, validator: .image(errorString: "Please add an image"))
         let biography = JMFormItem(tag: "biography", cellType: .textView, placeholderText: "Enter your bio", validator: nil)
         let email = JMFormItem(tag: "email", cellType: .textfield(type: .email), placeholderText: "Enter your email", validator: .email(errorString: ""))
@@ -96,20 +96,20 @@ class ExampleViewController: JMFormViewController {
         
         // Setup the sections for the form
         self.setupForm(
-            JMFormSection(items: [firstName], title: "First name", isCollapsed: false),
-            JMFormSection(items: [lastName], title: "Last name", isCollapsed: false),
-            JMFormSection(items: [image], title: "Image", isCollapsed: false),
-            JMFormSection(items: [biography], title: "Biography", isCollapsed: false),
-            JMFormSection(items: [age], title: "Age", isCollapsed: false),
-            JMFormSection(items: [email], title: "Email", isCollapsed: false),
-            JMFormSection(items: [confirmEmail], title: "Confirm email", isCollapsed: false),
-            JMFormSection(items: [password], title: "Password", isCollapsed: false),
-            JMFormSection(items: [date], title: "Select a day", isCollapsed: false),
-            JMFormSection(items: [time], title: "Select a time", isCollapsed: false),
-            JMFormSection(items: [dateTime], title: "Select both date and time", isCollapsed: false),
-            JMFormSection(items: [testCustom], title: "Test custom", isCollapsed: false),
-            JMFormSection(items: [actionSheet], title: "Action sheet", isCollapsed: false),
-            JMFormSection(items: [termsAndConditions, slider], title: nil, isCollapsed: true)
+            JMFormSection(items: [firstName], title: "First name", isVisible: true),
+            JMFormSection(items: [lastName], title: "Last name", isVisible: true),
+            JMFormSection(items: [image], title: "Image", isVisible: true),
+            JMFormSection(items: [biography], title: "Biography", isVisible: true),
+            JMFormSection(items: [age], title: "Age", isVisible: true),
+            JMFormSection(items: [email], title: "Email", isVisible: true),
+            JMFormSection(items: [confirmEmail], title: "Confirm email", isVisible: true),
+            JMFormSection(items: [password], title: "Password", isVisible: true),
+            JMFormSection(items: [date], title: "Select a day", isVisible: true),
+            JMFormSection(items: [time], title: "Select a time", isVisible: true),
+            JMFormSection(items: [dateTime], title: "Select both date and time", isVisible: true),
+            JMFormSection(items: [testCustom], title: "Test custom", isVisible: true),
+            JMFormSection(items: [actionSheet], title: "Action sheet", isVisible: true),
+            JMFormSection(items: [termsAndConditions, slider], title: nil, isVisible: true)
         )
         
     }
