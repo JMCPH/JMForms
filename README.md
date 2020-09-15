@@ -15,7 +15,7 @@ The framework is currently used in the [Tiimo | The ADHD & autism app](https://a
 ## Requirements
 
 * Xcode 10.2
-* iOS 12.0+
+* iOS 13.0+
 
 ## Installation
 
