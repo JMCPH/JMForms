@@ -26,10 +26,17 @@ protocol JMFormCellDelegate: class {
     func didTapCell(atIndexPath indexPath: IndexPath)
 }
 
-open class JMFormTableViewCell: UITableViewCell, JMFormCell {
+open class JMFormTableViewCell: UITableViewCell, JMFormCell, JMFormUpdatable {
+    
     public var indexPath: IndexPath = []
     weak var delegate: JMFormCellDelegate?
     public weak var item: JMFormItem?
+    
+    
+    open func update(withForm item: JMFormItem) {
+        self.item = item
+        backgroundColor = item.appearance.backgroundColor
+    }
     
     deinit {
         item = nil

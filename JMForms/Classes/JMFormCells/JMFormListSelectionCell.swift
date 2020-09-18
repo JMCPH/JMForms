@@ -59,12 +59,8 @@ open class JMFormListSelectionCell: JMFormTableViewCell {
         delegate?.didTapCell(atIndexPath: indexPath)
     }
     
-}
-
-extension JMFormListSelectionCell: JMFormUpdatable {
-    
-    public func update(withForm item: JMFormItem) {
-        self.item = item
+    public override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         titleLabel.text = item.titleText
         valueLabel.text = item.getValue()
         
