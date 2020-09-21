@@ -109,7 +109,7 @@ open class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         super.update(withForm: item)
         self.item?.delegate = self
         
-        textView.backgroundColor = item.appearance.fieldBackgroundColor
+        textView.backgroundColor = item.appearance.contentBackgroundColor
         
         // Show value
         if let value: String = item.getValue(), !value.isEmpty {

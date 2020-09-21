@@ -129,7 +129,7 @@ open class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         // Update the UI based on Appearence
         textField.font = item.appearance.titleFont
         textField.textColor = item.appearance.titleColor
-        textField.backgroundColor = item.appearance.fieldBackgroundColor
+        textField.backgroundColor = item.appearance.contentBackgroundColor
         
         // Setup the UI of the textfield
         setupTextFieldUI()
