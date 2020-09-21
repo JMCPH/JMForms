@@ -105,23 +105,11 @@ open class JMFormTextViewCell: JMFormTableViewCell, UITextViewDelegate {
         
     }
     
-}
-
-
-extension JMFormTextViewCell: JMFormItemDelegate {
-    
-    public func setExpanded(expanded: Bool) { }
-    
-    public func setAsFirstResponder() {
-        textView.becomeFirstResponder()
-    }
-}
-
-extension JMFormTextViewCell: JMFormUpdatable {
-    
-    public func update(withForm item: JMFormItem) {
-        self.item = item
+    public override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         self.item?.delegate = self
+        
+        textView.backgroundColor = item.appearance.fieldBackgroundColor
         
         // Show value
         if let value: String = item.getValue(), !value.isEmpty {
@@ -145,5 +133,15 @@ extension JMFormTextViewCell: JMFormUpdatable {
            
     }
     
+}
+
+
+extension JMFormTextViewCell: JMFormItemDelegate {
+    
+    public func setExpanded(expanded: Bool) { }
+    
+    public func setAsFirstResponder() {
+        textView.becomeFirstResponder()
+    }
 }
 

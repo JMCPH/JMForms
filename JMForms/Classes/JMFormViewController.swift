@@ -152,9 +152,7 @@ open class JMFormViewController: UITableViewController {
         guard let cell = cellType.dequeueCell(for: tableView, at: indexPath) as? JMFormTableViewCell else { fatalError() }
         cell.indexPath = indexPath
         cell.delegate = self
-        
-        guard let formUpdatableCell = cell as? JMFormUpdatable else { return cell } // fatalError() }
-        formUpdatableCell.update(withForm: item)
+        cell.update(withForm: item)
         
         return cell
     }

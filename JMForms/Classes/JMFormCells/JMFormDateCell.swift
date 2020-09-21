@@ -176,20 +176,8 @@ open class JMFormDateCell: JMFormTableViewCell, JMFormCellExpandable {
         contentView.layer.addBorder(.bottom, color: heightConstraint.constant == unexpandedHeight ? UIColor(r: 246, g: 249, b: 252) : UIColor.clear, thickness: 1.0, edgeInset: .init(top: 0, left: 20, bottom: 0, right: 20))
     }
     
-}
-
-extension JMFormDateCell: JMFormItemDelegate {
-    public func setExpanded(expanded: Bool) {
-        self.expanded = expanded
-    }
-    
-    public func setAsFirstResponder() { }
-}
-
-extension JMFormDateCell: JMFormUpdatable {
-    
-    public func update(withForm item: JMFormItem) {
-        self.item = item
+    public override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         titleLabel.text = item.titleText
         detailLabel.text = item.detailText
         
@@ -231,5 +219,12 @@ extension JMFormDateCell: JMFormUpdatable {
         }
         
     }
+}
+
+extension JMFormDateCell: JMFormItemDelegate {
+    public func setExpanded(expanded: Bool) {
+        self.expanded = expanded
+    }
     
+    public func setAsFirstResponder() { }
 }

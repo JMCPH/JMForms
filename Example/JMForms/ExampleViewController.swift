@@ -19,6 +19,8 @@ public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
     public var backgroundColor: UIColor = .clear
     
+    public var fieldBackgroundColor: UIColor = .white
+    
     public var titleColor: UIColor = .black
     
     public var titleInvalidColor: UIColor = .red

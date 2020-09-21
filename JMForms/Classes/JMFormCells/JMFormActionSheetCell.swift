@@ -81,13 +81,9 @@ class JMFormActionSheetCell: JMFormTableViewCell {
         titleLabel.text = nil
         valueLabel.text = nil
     }
-
-}
-
-extension JMFormActionSheetCell: JMFormUpdatable {
     
-    func update(withForm item: JMFormItem) {
-        self.item = item
+    override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         titleLabel.text = item.titleText
         valueLabel.text = item.getValue()
         
@@ -98,5 +94,5 @@ extension JMFormActionSheetCell: JMFormUpdatable {
         valueLabel.textColor = item.appearance.valueColor
         
     }
-    
+
 }

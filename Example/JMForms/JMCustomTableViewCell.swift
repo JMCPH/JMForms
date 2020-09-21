@@ -43,16 +43,13 @@ class JMCustomTableViewCell: JMFormTableViewCell {
         titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension JMCustomTableViewCell: JMFormUpdatable {
-    
-    func update(withForm item: JMFormItem) {
+    override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         debugPrint("Did set form item")
         
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

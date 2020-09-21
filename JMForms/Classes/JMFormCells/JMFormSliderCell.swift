@@ -93,13 +93,8 @@ open class JMFormSliderCell: JMFormTableViewCell {
         valueLabel.text = "\(roundedValue) \(valueString)"
     }
     
-}
-
-extension JMFormSliderCell: JMFormUpdatable {
-  
-    public func update(withForm item: JMFormItem) {
-        
-        self.item = item
+    public override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         titleLabel.text = item.titleText
         
         // Update the UI based on Appearence
@@ -125,6 +120,7 @@ extension JMFormSliderCell: JMFormUpdatable {
         }
         
     }
+    
 }
 
 //    func update(withForm item: JMFormItem) {
