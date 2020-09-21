@@ -1,5 +1,5 @@
 PODS:
-  - JMForms (0.1.0)
+  - JMForms (0.1.9)
 
 DEPENDENCIES:
   - JMForms (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JMForms: 825068742622e3b144e8edd96f7af2af509a0636
+  JMForms: 130a850a048f6f2f968ee24186e01a8de01708f8
 
 PODFILE CHECKSUM: 5aa31d2fe77611ff4a5ea8deb8bd6787de81864a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1

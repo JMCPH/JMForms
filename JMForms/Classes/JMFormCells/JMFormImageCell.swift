@@ -62,12 +62,8 @@ open class JMFormImageCell: JMFormTableViewCell {
         delegate?.didTapCell(atIndexPath: indexPath)
     }
     
-}
-
-extension JMFormImageCell: JMFormUpdatable {
-    
-    public func update(withForm item: JMFormItem) {
-        self.item = item
+    public override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         titleLabel.text = item.titleText
         
         // Update the UI based on Appearence

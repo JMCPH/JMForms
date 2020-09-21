@@ -14,6 +14,9 @@ public protocol JMFormItemAppearance {
     // Background color of the view
     var backgroundColor: UIColor { get set }
     
+    // Inner background - mainly used for UITextFields and UITextView
+    var fieldBackgroundColor: UIColor { get set }
+    
     // Color of the titleLabel - valid and invalid
     var titleColor: UIColor { get set }
     var titleInvalidColor: UIColor { get set }
@@ -51,6 +54,8 @@ public protocol JMFormItemAppearance {
 public struct JMFormItemAppearanceDefault: JMFormItemAppearance {
     
     public var backgroundColor: UIColor = .clear
+    
+    public var fieldBackgroundColor: UIColor = .clear
     
     public var titleColor: UIColor = .black
     

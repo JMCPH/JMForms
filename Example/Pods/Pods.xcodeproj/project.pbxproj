@@ -7,38 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A579EFB85911D046F918233E4988FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		05AF86E4229C15598438FD9061A8B273 /* JMFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC6C8D0158A50C69AF4F1E06565562 /* JMFormTextFieldCell.swift */; };
+		08E1AF8A3C0C9435C3FEA07C4AC8EE07 /* JMFormDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2ECC07E97E9FEEF5C7D77C6AE9C2B /* JMFormDateCell.swift */; };
+		0A121F35F415EC73D3AE91014BCD798C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E98C671870A0BDD83BD589385B3ECB7 /* UIColor+Extensions.swift */; };
+		0A4A61E5E68550A4C8461EB8E3472422 /* JMForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0DF044A185B048D505AFBA5001E239 /* JMForm.swift */; };
+		1129BF9D067B2BE576EA31F8D27C84E9 /* JMActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA6373D99CA4930C4EA66C3EB8B57C /* JMActionSheet.swift */; };
+		12A6BDD5F5084163049928B31BC101D1 /* JMFormItemAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DD7B42399C97D5DD5AD422E518A4C /* JMFormItemAppearence.swift */; };
+		1D7E7E17157F7455703236A96B5D125A /* JMFormItemCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9DCE58208885EEA1367C0F7F7F1731 /* JMFormItemCellType.swift */; };
+		1DED6C35ADA01EE94AA884EAE6D8AF75 /* JMFormSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E754BBCC2F4470E9C05BF02299F2367 /* JMFormSectionHeaderView.swift */; };
+		1FF2FF64D5E1585AFB017592F96EC9CB /* JMFormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2517683E09957CA538742F120B56E251 /* JMFormTextViewCell.swift */; };
+		274476C2F33D99381C147F64031A321F /* JMFormActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0CD6F3F997BDF1925020C0EBDFDB67 /* JMFormActionSheetCell.swift */; };
 		2AE68AF9DBEDB806AB679BFB22718A68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		2BF08400C6DAE3F3A58E551BFA75DE1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		367AF8C5251155F40043F830 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AF8C4251155F30043F830 /* CALayer+Extensions.swift */; };
-		368FEF5E24D36EDA00935498 /* JMFormItemAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368FEF5D24D36EDA00935498 /* JMFormItemAppearence.swift */; };
-		36B3158F24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3158D24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift */; };
-		36B3159024D1D30600BC2EB7 /* JMFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3158E24D1D30600BC2EB7 /* JMFormSection.swift */; };
-		36B9D73E24D06B86006A0D87 /* JMForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72B24D06B86006A0D87 /* JMForm.swift */; };
-		36B9D73F24D06B86006A0D87 /* JMFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72D24D06B86006A0D87 /* JMFormItem.swift */; };
-		36B9D74024D06B86006A0D87 /* JMFormItemCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D72E24D06B86006A0D87 /* JMFormItemCellType.swift */; };
-		36B9D74224D06B86006A0D87 /* JMFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73124D06B86006A0D87 /* JMFormValidation.swift */; };
-		36B9D74324D06B86006A0D87 /* JMFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73224D06B86006A0D87 /* JMFormValidator.swift */; };
-		36B9D74424D06B86006A0D87 /* JMFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73324D06B86006A0D87 /* JMFormViewController.swift */; };
-		36B9D74524D06B86006A0D87 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73524D06B86006A0D87 /* UIColor+Extensions.swift */; };
-		36B9D74624D06B86006A0D87 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73624D06B86006A0D87 /* UITextField+Extensions.swift */; };
-		36B9D74724D06B86006A0D87 /* JMFormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73824D06B86006A0D87 /* JMFormTextViewCell.swift */; };
-		36B9D74824D06B86006A0D87 /* JMFormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */; };
-		36B9D74924D06B86006A0D87 /* JMFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */; };
-		36B9D74A24D06B86006A0D87 /* JMFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */; };
-		36BFC42124EC097A003B2E07 /* JMFormImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BFC42024EC097A003B2E07 /* JMFormImageCell.swift */; };
-		36C7D9C824ED619C00383673 /* JMImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7D9C724ED619C00383673 /* JMImagePicker.swift */; };
-		36C7D9CA24ED654A00383673 /* JMFormListSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7D9C924ED654A00383673 /* JMFormListSelectionCell.swift */; };
-		36C7D9CC24ED66C100383673 /* JMListSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7D9CB24ED66C100383673 /* JMListSelectionController.swift */; };
-		36D23C1E24F3E25D00CE3785 /* JMFormDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D23C1D24F3E25D00CE3785 /* JMFormDateCell.swift */; };
-		36FA5FDC24F660680050ECCD /* JMFormActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA5FDB24F660680050ECCD /* JMFormActionSheetCell.swift */; };
-		36FA5FDE24F6611C0050ECCD /* JMActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA5FDD24F6611C0050ECCD /* JMActionSheet.swift */; };
-		36FA5FE024F669690050ECCD /* JMFormSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA5FDF24F669690050ECCD /* JMFormSliderCell.swift */; };
+		355BD0C125A7549D427223C92EF03117 /* JMImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EE0E1C0B7732351B38068FCDA63A2 /* JMImagePicker.swift */; };
+		39CBE3DF8A477BE966761CD684FA91B1 /* JMFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57BA0081A0221BE20F65CFDC3126E21 /* JMFormValidation.swift */; };
 		401719D577FE2F952BD63322836A24F6 /* Pods-JMForms_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AFD6D3912E2C3417443BE5467F63EA /* Pods-JMForms_Tests-dummy.m */; };
-		49971C5CCAECE49D20337C47D26F1BDA /* JMForms-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F99CB662B4A404E0D167A67675EDE95 /* JMForms-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46F1472105336D53F7CC14F111BB0E3C /* JMFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE180E9FAFF3F60707C876F7AFAAD18D /* JMFormItem.swift */; };
+		63B193B3B8C8D57194B5727206DC575D /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A68A48140D473A8181F4BA5904C80AE /* CALayer+Extensions.swift */; };
 		6455DAF8E6075739E7D45E6D4596B9D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		A9179D7766EF0A3D3BCB48BDD39ABE99 /* JMForms-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2EEC1A42ACFC93941BED9C67FD0005 /* JMForms-dummy.m */; };
+		68A82AED8D1D9317B0895ABEFFB03A24 /* JMFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E3F5F3BFBFECDCF4491C09013B5700 /* JMFormTableViewCell.swift */; };
+		6C381B11DDB9947F387A390F372CAC94 /* JMFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7173BDE1546E3AE185C2453034AAE75 /* JMFormValidator.swift */; };
+		74660E44FEC4FA143DDB79D215131252 /* JMFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCAF893EF0E150F036E1BDCA88DA5FF /* JMFormSection.swift */; };
+		7753540BF1813E2F54CCDFC5252A66EE /* JMForms-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE5087122D12441E8C14DD61A35B1DB /* JMForms-dummy.m */; };
+		A3414D92E22493670B71B628FAE0C644 /* JMFormListSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612906DEB66833D25081B6F807BF020 /* JMFormListSelectionCell.swift */; };
+		AC7A883583DCDE04D56EAAE63BCED59E /* JMFormImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0439685910E23BB41A51C3E53965D /* JMFormImageCell.swift */; };
+		B73A96C3998C00CA1453A9E181753D38 /* JMFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4628C653E528ED1257637F7FC0101 /* JMFormViewController.swift */; };
+		BC6DBEEAD3BD04A78599B62477287A65 /* JMFormSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424D2C8219B26E09A10CBAD3C076169 /* JMFormSliderCell.swift */; };
+		C48BB7A3DE2A2A82CD7F9DF29BF600CC /* JMListSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A06D22FCF589CC398F7E3E152BF08 /* JMListSelectionController.swift */; };
 		C4ADA449A8726BD4BA9D9671ED76D0A6 /* Pods-JMForms_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDBD8456175F4003296E563CFB6C93 /* Pods-JMForms_Example-dummy.m */; };
+		D882608F4D6365788F67248DF777E781 /* JMForms-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E71D23605D84C52C9046A0A7F68968C /* JMForms-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E580F8FF2D6128B9AA5DB86242FEE015 /* JMFormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171B1F7C3FEF8F20045488B51EA2412 /* JMFormSwitchCell.swift */; };
 		E847330B5BF3CFCAAA1D5FACA1E7A40A /* Pods-JMForms_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FDC8C0A781D181B96CF90C2FF9BCFED9 /* Pods-JMForms_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFA2A0B26CB51EA30BF2B71A8DC46A36 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1833B0B5D3BF681CCB53B528424BEC /* UITextField+Extensions.swift */; };
 		F167A38D3F481B536250429D0588ED0F /* Pods-JMForms_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44905AE1A20EBD952A3BAD4C5013384A /* Pods-JMForms_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -60,62 +60,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05145516AABCC0376A383924A99BCF44 /* JMForms-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMForms-prefix.pch"; sourceTree = "<group>"; };
+		0954094B38B515F6FB5F1872450C2AFA /* JMForms-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMForms-prefix.pch"; sourceTree = "<group>"; };
+		0C1EE0E1C0B7732351B38068FCDA63A2 /* JMImagePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMImagePicker.swift; sourceTree = "<group>"; };
+		0D9DCE58208885EEA1367C0F7F7F1731 /* JMFormItemCellType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormItemCellType.swift; sourceTree = "<group>"; };
+		0F0DF044A185B048D505AFBA5001E239 /* JMForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JMForm.swift; path = JMForms/Classes/JMForm.swift; sourceTree = "<group>"; };
 		1217C44850154F3E48FE2E29354AA62B /* Pods-JMForms_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JMForms_Example-frameworks.sh"; sourceTree = "<group>"; };
 		1B1EB5CBA8A4581E7EEB2161030BFA79 /* Pods-JMForms_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JMForms_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1D483F7124D01065D72D0E2DFD8A3676 /* JMForms.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JMForms.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1F18AB09BB77F53A4E36219AFDF9DC0B /* Pods-JMForms_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JMForms_Tests.modulemap"; sourceTree = "<group>"; };
-		2607EB006692069D1215687FA9F54433 /* JMForms.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JMForms.modulemap; sourceTree = "<group>"; };
-		2F99CB662B4A404E0D167A67675EDE95 /* JMForms-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMForms-umbrella.h"; sourceTree = "<group>"; };
+		2517683E09957CA538742F120B56E251 /* JMFormTextViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormTextViewCell.swift; sourceTree = "<group>"; };
+		28D4628C653E528ED1257637F7FC0101 /* JMFormViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JMFormViewController.swift; path = JMForms/Classes/JMFormViewController.swift; sourceTree = "<group>"; };
+		2E754BBCC2F4470E9C05BF02299F2367 /* JMFormSectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormSectionHeaderView.swift; sourceTree = "<group>"; };
 		30AB7A918FB2E2A03A256A6AA6B7B5D1 /* Pods-JMForms_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JMForms_Example.modulemap"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		367AF8C4251155F30043F830 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
-		368FEF5D24D36EDA00935498 /* JMFormItemAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormItemAppearence.swift; sourceTree = "<group>"; };
-		36B3158D24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSectionHeaderView.swift; sourceTree = "<group>"; };
-		36B3158E24D1D30600BC2EB7 /* JMFormSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSection.swift; sourceTree = "<group>"; };
-		36B9D72B24D06B86006A0D87 /* JMForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JMForm.swift; path = JMForms/Classes/JMForm.swift; sourceTree = "<group>"; };
-		36B9D72D24D06B86006A0D87 /* JMFormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItem.swift; sourceTree = "<group>"; };
-		36B9D72E24D06B86006A0D87 /* JMFormItemCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormItemCellType.swift; sourceTree = "<group>"; };
-		36B9D73124D06B86006A0D87 /* JMFormValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormValidation.swift; sourceTree = "<group>"; };
-		36B9D73224D06B86006A0D87 /* JMFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormValidator.swift; sourceTree = "<group>"; };
-		36B9D73324D06B86006A0D87 /* JMFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JMFormViewController.swift; path = JMForms/Classes/JMFormViewController.swift; sourceTree = "<group>"; };
-		36B9D73524D06B86006A0D87 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		36B9D73624D06B86006A0D87 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		36B9D73824D06B86006A0D87 /* JMFormTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormTextViewCell.swift; sourceTree = "<group>"; };
-		36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormSwitchCell.swift; sourceTree = "<group>"; };
-		36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormTextFieldCell.swift; sourceTree = "<group>"; };
-		36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMFormTableViewCell.swift; sourceTree = "<group>"; };
-		36BFC42024EC097A003B2E07 /* JMFormImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormImageCell.swift; sourceTree = "<group>"; };
-		36C7D9C724ED619C00383673 /* JMImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMImagePicker.swift; sourceTree = "<group>"; };
-		36C7D9C924ED654A00383673 /* JMFormListSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormListSelectionCell.swift; sourceTree = "<group>"; };
-		36C7D9CB24ED66C100383673 /* JMListSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMListSelectionController.swift; sourceTree = "<group>"; };
-		36D23C1D24F3E25D00CE3785 /* JMFormDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormDateCell.swift; sourceTree = "<group>"; };
-		36FA5FDB24F660680050ECCD /* JMFormActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormActionSheetCell.swift; sourceTree = "<group>"; };
-		36FA5FDD24F6611C0050ECCD /* JMActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMActionSheet.swift; sourceTree = "<group>"; };
-		36FA5FDF24F669690050ECCD /* JMFormSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMFormSliderCell.swift; sourceTree = "<group>"; };
 		3781018D1EF7622049D6D772B6590883 /* Pods-JMForms_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMForms_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3782268641A067255C3DC323E2858135 /* Pods-JMForms_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMForms_Example-Info.plist"; sourceTree = "<group>"; };
+		38C355C605B372C6444EA502970F6F76 /* JMForms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JMForms.debug.xcconfig; sourceTree = "<group>"; };
+		3DB43AD76F557DDC5A8C6A372604FE10 /* JMForms.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JMForms.modulemap; sourceTree = "<group>"; };
 		44905AE1A20EBD952A3BAD4C5013384A /* Pods-JMForms_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JMForms_Example-umbrella.h"; sourceTree = "<group>"; };
+		4612906DEB66833D25081B6F807BF020 /* JMFormListSelectionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormListSelectionCell.swift; sourceTree = "<group>"; };
 		4A6B1600484C23F831E9AE59D0C6C7E6 /* Pods-JMForms_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JMForms_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4FCAF893EF0E150F036E1BDCA88DA5FF /* JMFormSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormSection.swift; sourceTree = "<group>"; };
+		558F0ED231176B989406DBA5DA00A55E /* JMForms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JMForms.release.xcconfig; sourceTree = "<group>"; };
+		5A68A48140D473A8181F4BA5904C80AE /* CALayer+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		6DFCB9349751911B6F86671A989D44D4 /* JMForms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JMForms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E98C671870A0BDD83BD589385B3ECB7 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		7171B1F7C3FEF8F20045488B51EA2412 /* JMFormSwitchCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormSwitchCell.swift; sourceTree = "<group>"; };
 		72B0635DF81985506097034C4DA5BBB5 /* Pods-JMForms_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMForms_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		75F2ECC07E97E9FEEF5C7D77C6AE9C2B /* JMFormDateCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormDateCell.swift; sourceTree = "<group>"; };
 		7C4473EEBBDDAA0D3737CCD562880E4E /* Pods_JMForms_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMForms_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF2D97A0D7A50E37A95B712FE0FB9B5 /* Pods-JMForms_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JMForms_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8062815A0AF9A79FB16855A5F7EA21CA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		8E220F85C62FC00B5AF1A0598AC040EB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9427C24F853BCC7F9E7659D74FA18D67 /* JMForms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JMForms.release.xcconfig; sourceTree = "<group>"; };
+		85E3F5F3BFBFECDCF4491C09013B5700 /* JMFormTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormTableViewCell.swift; sourceTree = "<group>"; };
+		871FB8CCD244AD6C1FD30FB66D9024F3 /* JMForms.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JMForms.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8E71D23605D84C52C9046A0A7F68968C /* JMForms-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMForms-umbrella.h"; sourceTree = "<group>"; };
+		947A06D22FCF589CC398F7E3E152BF08 /* JMListSelectionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMListSelectionController.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F1833B0B5D3BF681CCB53B528424BEC /* UITextField+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		A02F52DAA940CCF7F82CAF6F87234749 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A1E99E4E7C57A1CBA78C0BCA0C38A0C3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A2AFD6D3912E2C3417443BE5467F63EA /* Pods-JMForms_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JMForms_Tests-dummy.m"; sourceTree = "<group>"; };
+		A7173BDE1546E3AE185C2453034AAE75 /* JMFormValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormValidator.swift; sourceTree = "<group>"; };
 		ACBDBD8456175F4003296E563CFB6C93 /* Pods-JMForms_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JMForms_Example-dummy.m"; sourceTree = "<group>"; };
 		B91EFDDCC4FC4C5E3564F765EE381FD6 /* Pods_JMForms_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMForms_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD2EEC1A42ACFC93941BED9C67FD0005 /* JMForms-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JMForms-dummy.m"; sourceTree = "<group>"; };
+		BEE5087122D12441E8C14DD61A35B1DB /* JMForms-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JMForms-dummy.m"; sourceTree = "<group>"; };
+		C29DD7B42399C97D5DD5AD422E518A4C /* JMFormItemAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormItemAppearence.swift; sourceTree = "<group>"; };
+		C424D2C8219B26E09A10CBAD3C076169 /* JMFormSliderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormSliderCell.swift; sourceTree = "<group>"; };
+		C5AC6C8D0158A50C69AF4F1E06565562 /* JMFormTextFieldCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormTextFieldCell.swift; sourceTree = "<group>"; };
+		C7EA6373D99CA4930C4EA66C3EB8B57C /* JMActionSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMActionSheet.swift; sourceTree = "<group>"; };
 		C8BAF71D68523894706ED5B420199991 /* Pods-JMForms_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JMForms_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CD0CD6F3F997BDF1925020C0EBDFDB67 /* JMFormActionSheetCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormActionSheetCell.swift; sourceTree = "<group>"; };
 		CD9FAC79B1116A3799ACA5FE74EBB845 /* Pods-JMForms_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JMForms_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D3A1CF1619643BE4A8A0FF75277246A4 /* Pods-JMForms_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMForms_Tests-Info.plist"; sourceTree = "<group>"; };
-		D3A2B031A3C2802E894991FD4BD7010B /* JMForms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JMForms.debug.xcconfig; sourceTree = "<group>"; };
-		E3B69DFDD48EB50285AEB17BF8060A9E /* JMForms-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JMForms-Info.plist"; sourceTree = "<group>"; };
+		D57BA0081A0221BE20F65CFDC3126E21 /* JMFormValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormValidation.swift; sourceTree = "<group>"; };
 		E59E2AEB4FC95C505C7001927D233828 /* Pods-JMForms_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JMForms_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E9C0439685910E23BB41A51C3E53965D /* JMFormImageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormImageCell.swift; sourceTree = "<group>"; };
 		FDC8C0A781D181B96CF90C2FF9BCFED9 /* Pods-JMForms_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JMForms_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FE180E9FAFF3F60707C876F7AFAAD18D /* JMFormItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JMFormItem.swift; sourceTree = "<group>"; };
+		FFB9B27D6A44E4DC50499CF5D0ECD0AD /* JMForms-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JMForms-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +127,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E7E722E432E5EFE918A2F998EC4613C /* Frameworks */ = {
+		AF92DC5205848D0D2B6AF5A40D624730 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF08400C6DAE3F3A58E551BFA75DE1B /* Foundation.framework in Frameworks */,
+				00A579EFB85911D046F918233E4988FF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,81 +162,43 @@
 			path = "Target Support Files/Pods-JMForms_Tests";
 			sourceTree = "<group>";
 		};
-		36B3158C24D1D30600BC2EB7 /* JMFormSection */ = {
+		1E6D6BCFF185C2FAD9C23F261D427E92 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				36B3158D24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift */,
-				36B3158E24D1D30600BC2EB7 /* JMFormSection.swift */,
-			);
-			name = JMFormSection;
-			path = JMForms/Classes/JMFormSection;
-			sourceTree = "<group>";
-		};
-		36B9D72C24D06B86006A0D87 /* JMFormItem */ = {
-			isa = PBXGroup;
-			children = (
-				36B9D72D24D06B86006A0D87 /* JMFormItem.swift */,
-				368FEF5D24D36EDA00935498 /* JMFormItemAppearence.swift */,
-				36B9D72E24D06B86006A0D87 /* JMFormItemCellType.swift */,
-			);
-			name = JMFormItem;
-			path = JMForms/Classes/JMFormItem;
-			sourceTree = "<group>";
-		};
-		36B9D73024D06B86006A0D87 /* JMFormValidation */ = {
-			isa = PBXGroup;
-			children = (
-				36B9D73124D06B86006A0D87 /* JMFormValidation.swift */,
-				36B9D73224D06B86006A0D87 /* JMFormValidator.swift */,
-			);
-			name = JMFormValidation;
-			path = JMForms/Classes/JMFormValidation;
-			sourceTree = "<group>";
-		};
-		36B9D73424D06B86006A0D87 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				367AF8C4251155F30043F830 /* CALayer+Extensions.swift */,
-				36B9D73524D06B86006A0D87 /* UIColor+Extensions.swift */,
-				36B9D73624D06B86006A0D87 /* UITextField+Extensions.swift */,
-				36C7D9C724ED619C00383673 /* JMImagePicker.swift */,
-				36FA5FDD24F6611C0050ECCD /* JMActionSheet.swift */,
-				36C7D9CB24ED66C100383673 /* JMListSelectionController.swift */,
+				5A68A48140D473A8181F4BA5904C80AE /* CALayer+Extensions.swift */,
+				C7EA6373D99CA4930C4EA66C3EB8B57C /* JMActionSheet.swift */,
+				0C1EE0E1C0B7732351B38068FCDA63A2 /* JMImagePicker.swift */,
+				947A06D22FCF589CC398F7E3E152BF08 /* JMListSelectionController.swift */,
+				6E98C671870A0BDD83BD589385B3ECB7 /* UIColor+Extensions.swift */,
+				9F1833B0B5D3BF681CCB53B528424BEC /* UITextField+Extensions.swift */,
 			);
 			name = Extensions;
 			path = JMForms/Classes/Extensions;
 			sourceTree = "<group>";
 		};
-		36B9D73724D06B86006A0D87 /* JMFormCells */ = {
+		3E122F227B1CF1D0BFCA9A3980A16BC2 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				36B9D73B24D06B86006A0D87 /* JMFormTableViewCell.swift */,
-				36B9D73A24D06B86006A0D87 /* JMFormTextFieldCell.swift */,
-				36B9D73824D06B86006A0D87 /* JMFormTextViewCell.swift */,
-				36B9D73924D06B86006A0D87 /* JMFormSwitchCell.swift */,
-				36FA5FDF24F669690050ECCD /* JMFormSliderCell.swift */,
-				36BFC42024EC097A003B2E07 /* JMFormImageCell.swift */,
-				36D23C1D24F3E25D00CE3785 /* JMFormDateCell.swift */,
-				36FA5FDB24F660680050ECCD /* JMFormActionSheetCell.swift */,
-				36C7D9C924ED654A00383673 /* JMFormListSelectionCell.swift */,
+				52757322D02DF87635644E94C689769A /* JMForms */,
 			);
-			name = JMFormCells;
-			path = JMForms/Classes/JMFormCells;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		619F9BAC6E8E81FD939609F878045C4E /* Support Files */ = {
+		52757322D02DF87635644E94C689769A /* JMForms */ = {
 			isa = PBXGroup;
 			children = (
-				2607EB006692069D1215687FA9F54433 /* JMForms.modulemap */,
-				BD2EEC1A42ACFC93941BED9C67FD0005 /* JMForms-dummy.m */,
-				E3B69DFDD48EB50285AEB17BF8060A9E /* JMForms-Info.plist */,
-				05145516AABCC0376A383924A99BCF44 /* JMForms-prefix.pch */,
-				2F99CB662B4A404E0D167A67675EDE95 /* JMForms-umbrella.h */,
-				D3A2B031A3C2802E894991FD4BD7010B /* JMForms.debug.xcconfig */,
-				9427C24F853BCC7F9E7659D74FA18D67 /* JMForms.release.xcconfig */,
+				0F0DF044A185B048D505AFBA5001E239 /* JMForm.swift */,
+				28D4628C653E528ED1257637F7FC0101 /* JMFormViewController.swift */,
+				1E6D6BCFF185C2FAD9C23F261D427E92 /* Extensions */,
+				9C8F2532E498607DA11966C4BEEE72B0 /* JMFormCells */,
+				FC6FE2B5113C77C08E82AF0C5032A39A /* JMFormItem */,
+				CC0CDAE774F430A5932DEA00D6DE64C9 /* JMFormSection */,
+				BDD8D781AD28A3A37B1D15BDE8F27BC0 /* JMFormValidation */,
+				CB6F45E7E8662606CB742FC7E8DCD7E1 /* Pod */,
+				D1C0CA69B0ADBF186531AB6252C55AF2 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/JMForms";
+			name = JMForms;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		67A6F9ADB523532D8B312C7856EB7970 /* Targets Support Files */ = {
@@ -248,39 +210,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		770D44129D0B5D066195924C9B906339 /* JMForms */ = {
+		9C8F2532E498607DA11966C4BEEE72B0 /* JMFormCells */ = {
 			isa = PBXGroup;
 			children = (
-				36B9D72B24D06B86006A0D87 /* JMForm.swift */,
-				36B9D73324D06B86006A0D87 /* JMFormViewController.swift */,
-				36B9D72C24D06B86006A0D87 /* JMFormItem */,
-				36B3158C24D1D30600BC2EB7 /* JMFormSection */,
-				36B9D73024D06B86006A0D87 /* JMFormValidation */,
-				36B9D73724D06B86006A0D87 /* JMFormCells */,
-				36B9D73424D06B86006A0D87 /* Extensions */,
-				78ACD5839C901B3B6BAFD4C0558AB50E /* Pod */,
-				619F9BAC6E8E81FD939609F878045C4E /* Support Files */,
+				CD0CD6F3F997BDF1925020C0EBDFDB67 /* JMFormActionSheetCell.swift */,
+				75F2ECC07E97E9FEEF5C7D77C6AE9C2B /* JMFormDateCell.swift */,
+				E9C0439685910E23BB41A51C3E53965D /* JMFormImageCell.swift */,
+				4612906DEB66833D25081B6F807BF020 /* JMFormListSelectionCell.swift */,
+				C424D2C8219B26E09A10CBAD3C076169 /* JMFormSliderCell.swift */,
+				7171B1F7C3FEF8F20045488B51EA2412 /* JMFormSwitchCell.swift */,
+				85E3F5F3BFBFECDCF4491C09013B5700 /* JMFormTableViewCell.swift */,
+				C5AC6C8D0158A50C69AF4F1E06565562 /* JMFormTextFieldCell.swift */,
+				2517683E09957CA538742F120B56E251 /* JMFormTextViewCell.swift */,
 			);
-			name = JMForms;
-			path = ../..;
+			name = JMFormCells;
+			path = JMForms/Classes/JMFormCells;
 			sourceTree = "<group>";
 		};
-		78ACD5839C901B3B6BAFD4C0558AB50E /* Pod */ = {
+		BDD8D781AD28A3A37B1D15BDE8F27BC0 /* JMFormValidation */ = {
 			isa = PBXGroup;
 			children = (
-				1D483F7124D01065D72D0E2DFD8A3676 /* JMForms.podspec */,
-				8E220F85C62FC00B5AF1A0598AC040EB /* LICENSE */,
-				8062815A0AF9A79FB16855A5F7EA21CA /* README.md */,
+				D57BA0081A0221BE20F65CFDC3126E21 /* JMFormValidation.swift */,
+				A7173BDE1546E3AE185C2453034AAE75 /* JMFormValidator.swift */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		79806AF0F9B340EA76A76C4A1CD7D95B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				770D44129D0B5D066195924C9B906339 /* JMForms */,
-			);
-			name = "Development Pods";
+			name = JMFormValidation;
+			path = JMForms/Classes/JMFormValidation;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -291,15 +245,50 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		CB6F45E7E8662606CB742FC7E8DCD7E1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				871FB8CCD244AD6C1FD30FB66D9024F3 /* JMForms.podspec */,
+				A1E99E4E7C57A1CBA78C0BCA0C38A0C3 /* LICENSE */,
+				A02F52DAA940CCF7F82CAF6F87234749 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		CC0CDAE774F430A5932DEA00D6DE64C9 /* JMFormSection */ = {
+			isa = PBXGroup;
+			children = (
+				4FCAF893EF0E150F036E1BDCA88DA5FF /* JMFormSection.swift */,
+				2E754BBCC2F4470E9C05BF02299F2367 /* JMFormSectionHeaderView.swift */,
+			);
+			name = JMFormSection;
+			path = JMForms/Classes/JMFormSection;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				79806AF0F9B340EA76A76C4A1CD7D95B /* Development Pods */,
+				3E122F227B1CF1D0BFCA9A3980A16BC2 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				F395D04BD453A39722C661884852B36B /* Products */,
 				67A6F9ADB523532D8B312C7856EB7970 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D1C0CA69B0ADBF186531AB6252C55AF2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DB43AD76F557DDC5A8C6A372604FE10 /* JMForms.modulemap */,
+				BEE5087122D12441E8C14DD61A35B1DB /* JMForms-dummy.m */,
+				FFB9B27D6A44E4DC50499CF5D0ECD0AD /* JMForms-Info.plist */,
+				0954094B38B515F6FB5F1872450C2AFA /* JMForms-prefix.pch */,
+				8E71D23605D84C52C9046A0A7F68968C /* JMForms-umbrella.h */,
+				38C355C605B372C6444EA502970F6F76 /* JMForms.debug.xcconfig */,
+				558F0ED231176B989406DBA5DA00A55E /* JMForms.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JMForms";
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -337,17 +326,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FC6FE2B5113C77C08E82AF0C5032A39A /* JMFormItem */ = {
+			isa = PBXGroup;
+			children = (
+				FE180E9FAFF3F60707C876F7AFAAD18D /* JMFormItem.swift */,
+				C29DD7B42399C97D5DD5AD422E518A4C /* JMFormItemAppearence.swift */,
+				0D9DCE58208885EEA1367C0F7F7F1731 /* JMFormItemCellType.swift */,
+			);
+			name = JMFormItem;
+			path = JMForms/Classes/JMFormItem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		00B91B14E28B88B85BFF1617EB7468BE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				49971C5CCAECE49D20337C47D26F1BDA /* JMForms-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CFB08AE0690268C719C84DF44F4D78B6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,17 +356,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDA74E4F90F0313788432CF701A6786A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D882608F4D6365788F67248DF777E781 /* JMForms-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2FD9053FC4525F131D556C4C9CACC1CA /* JMForms */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CE451FFB3FAAB6A4D5A84D908671D81 /* Build configuration list for PBXNativeTarget "JMForms" */;
+			buildConfigurationList = 512E24CD58E37757151B565E3B2D0A9F /* Build configuration list for PBXNativeTarget "JMForms" */;
 			buildPhases = (
-				00B91B14E28B88B85BFF1617EB7468BE /* Headers */,
-				3F5D33C17882AD0E344572B58BB1C267 /* Sources */,
-				3E7E722E432E5EFE918A2F998EC4613C /* Frameworks */,
-				A1043F879F0508D84D4785E2B2BCBF39 /* Resources */,
+				FDA74E4F90F0313788432CF701A6786A /* Headers */,
+				7C228E3475140DE11EFD446A551FD16F /* Sources */,
+				AF92DC5205848D0D2B6AF5A40D624730 /* Frameworks */,
+				3BE50BBF2BCA202766FCE93BDB560E03 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -431,11 +431,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					2FD9053FC4525F131D556C4C9CACC1CA = {
-						LastSwiftMigration = 1160;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -472,7 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1043F879F0508D84D4785E2B2BCBF39 /* Resources */ = {
+		3BE50BBF2BCA202766FCE93BDB560E03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,43 +477,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F5D33C17882AD0E344572B58BB1C267 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36B9D74624D06B86006A0D87 /* UITextField+Extensions.swift in Sources */,
-				36FA5FDE24F6611C0050ECCD /* JMActionSheet.swift in Sources */,
-				367AF8C5251155F40043F830 /* CALayer+Extensions.swift in Sources */,
-				36B9D74524D06B86006A0D87 /* UIColor+Extensions.swift in Sources */,
-				36C7D9CA24ED654A00383673 /* JMFormListSelectionCell.swift in Sources */,
-				36B9D74324D06B86006A0D87 /* JMFormValidator.swift in Sources */,
-				36BFC42124EC097A003B2E07 /* JMFormImageCell.swift in Sources */,
-				36B9D74224D06B86006A0D87 /* JMFormValidation.swift in Sources */,
-				36FA5FE024F669690050ECCD /* JMFormSliderCell.swift in Sources */,
-				36B9D73F24D06B86006A0D87 /* JMFormItem.swift in Sources */,
-				36B9D74A24D06B86006A0D87 /* JMFormTableViewCell.swift in Sources */,
-				36B9D74724D06B86006A0D87 /* JMFormTextViewCell.swift in Sources */,
-				368FEF5E24D36EDA00935498 /* JMFormItemAppearence.swift in Sources */,
-				36B9D74024D06B86006A0D87 /* JMFormItemCellType.swift in Sources */,
-				36C7D9CC24ED66C100383673 /* JMListSelectionController.swift in Sources */,
-				36B9D74824D06B86006A0D87 /* JMFormSwitchCell.swift in Sources */,
-				A9179D7766EF0A3D3BCB48BDD39ABE99 /* JMForms-dummy.m in Sources */,
-				36FA5FDC24F660680050ECCD /* JMFormActionSheetCell.swift in Sources */,
-				36B9D74424D06B86006A0D87 /* JMFormViewController.swift in Sources */,
-				36B3158F24D1D30600BC2EB7 /* JMFormSectionHeaderView.swift in Sources */,
-				36B9D74924D06B86006A0D87 /* JMFormTextFieldCell.swift in Sources */,
-				36B3159024D1D30600BC2EB7 /* JMFormSection.swift in Sources */,
-				36C7D9C824ED619C00383673 /* JMImagePicker.swift in Sources */,
-				36B9D73E24D06B86006A0D87 /* JMForm.swift in Sources */,
-				36D23C1E24F3E25D00CE3785 /* JMFormDateCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5F151C6C84561C3501C1B2C65FFF47BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C4ADA449A8726BD4BA9D9671ED76D0A6 /* Pods-JMForms_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C228E3475140DE11EFD446A551FD16F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B193B3B8C8D57194B5727206DC575D /* CALayer+Extensions.swift in Sources */,
+				1129BF9D067B2BE576EA31F8D27C84E9 /* JMActionSheet.swift in Sources */,
+				0A4A61E5E68550A4C8461EB8E3472422 /* JMForm.swift in Sources */,
+				274476C2F33D99381C147F64031A321F /* JMFormActionSheetCell.swift in Sources */,
+				08E1AF8A3C0C9435C3FEA07C4AC8EE07 /* JMFormDateCell.swift in Sources */,
+				AC7A883583DCDE04D56EAAE63BCED59E /* JMFormImageCell.swift in Sources */,
+				46F1472105336D53F7CC14F111BB0E3C /* JMFormItem.swift in Sources */,
+				12A6BDD5F5084163049928B31BC101D1 /* JMFormItemAppearence.swift in Sources */,
+				1D7E7E17157F7455703236A96B5D125A /* JMFormItemCellType.swift in Sources */,
+				A3414D92E22493670B71B628FAE0C644 /* JMFormListSelectionCell.swift in Sources */,
+				7753540BF1813E2F54CCDFC5252A66EE /* JMForms-dummy.m in Sources */,
+				74660E44FEC4FA143DDB79D215131252 /* JMFormSection.swift in Sources */,
+				1DED6C35ADA01EE94AA884EAE6D8AF75 /* JMFormSectionHeaderView.swift in Sources */,
+				BC6DBEEAD3BD04A78599B62477287A65 /* JMFormSliderCell.swift in Sources */,
+				E580F8FF2D6128B9AA5DB86242FEE015 /* JMFormSwitchCell.swift in Sources */,
+				68A82AED8D1D9317B0895ABEFFB03A24 /* JMFormTableViewCell.swift in Sources */,
+				05AF86E4229C15598438FD9061A8B273 /* JMFormTextFieldCell.swift in Sources */,
+				1FF2FF64D5E1585AFB017592F96EC9CB /* JMFormTextViewCell.swift in Sources */,
+				39CBE3DF8A477BE966761CD684FA91B1 /* JMFormValidation.swift in Sources */,
+				6C381B11DDB9947F387A390F372CAC94 /* JMFormValidator.swift in Sources */,
+				B73A96C3998C00CA1453A9E181753D38 /* JMFormViewController.swift in Sources */,
+				355BD0C125A7549D427223C92EF03117 /* JMImagePicker.swift in Sources */,
+				C48BB7A3DE2A2A82CD7F9DF29BF600CC /* JMListSelectionController.swift in Sources */,
+				0A121F35F415EC73D3AE91014BCD798C /* UIColor+Extensions.swift in Sources */,
+				EFA2A0B26CB51EA30BF2B71A8DC46A36 /* UITextField+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,11 +543,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B9B0A6A6F781AE5FB0AC942B7D36EB4 /* Debug */ = {
+		08DF0B9FD6D63B33106583EC3D1BD47E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3A2B031A3C2802E894991FD4BD7010B /* JMForms.debug.xcconfig */;
+			baseConfigurationReference = 558F0ED231176B989406DBA5DA00A55E /* JMForms.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -565,50 +561,15 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JMForms/JMForms-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JMForms/JMForms-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.9;
 				MODULEMAP_FILE = "Target Support Files/JMForms/JMForms.modulemap";
 				PRODUCT_MODULE_NAME = JMForms;
 				PRODUCT_NAME = JMForms;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1B870E0AA9E32364E5BA214EC29A169B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A6B1600484C23F831E9AE59D0C6C7E6 /* Pods-JMForms_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -616,107 +577,7 @@
 			};
 			name = Release;
 		};
-		53542186A0EF063F24ACA46CC300A6BB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD9FAC79B1116A3799ACA5FE74EBB845 /* Pods-JMForms_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5745F7A3BE5E30D453711E1CBDEC6DED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CF2D97A0D7A50E37A95B712FE0FB9B5 /* Pods-JMForms_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		57D7CAF9DAF8FAAA2488E12ACDAD95FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B1EB5CBA8A4581E7EEB2161030BFA79 /* Pods-JMForms_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -764,7 +625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -775,7 +636,146 @@
 			};
 			name = Release;
 		};
-		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+		3E0AC3F8120736B663747C03AD7A6886 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A6B1600484C23F831E9AE59D0C6C7E6 /* Pods-JMForms_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		809084F7585CB5FD58733113087CBA4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD9FAC79B1116A3799ACA5FE74EBB845 /* Pods-JMForms_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97FAB9A173B87EEDA0E6B5BC70648BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF2D97A0D7A50E37A95B712FE0FB9B5 /* Pods-JMForms_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Tests/Pods-JMForms_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3D952A74892123D7B5C51C626A20B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38C355C605B372C6444EA502970F6F76 /* JMForms.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JMForms/JMForms-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JMForms/JMForms-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JMForms/JMForms.modulemap";
+				PRODUCT_MODULE_NAME = JMForms;
+				PRODUCT_NAME = JMForms;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -826,7 +826,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -839,11 +839,13 @@
 			};
 			name = Debug;
 		};
-		F4A92E6B96C3680718BA24A03EE876C9 /* Release */ = {
+		EEBAA06F2AE6C60479B85EE2984967F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9427C24F853BCC7F9E7659D74FA18D67 /* JMForms.release.xcconfig */;
+			baseConfigurationReference = 1B1EB5CBA8A4581E7EEB2161030BFA79 /* Pods-JMForms_Example.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -853,19 +855,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JMForms/JMForms-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JMForms/JMForms-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.9;
-				MODULEMAP_FILE = "Target Support Files/JMForms/JMForms.modulemap";
-				PRODUCT_MODULE_NAME = JMForms;
-				PRODUCT_NAME = JMForms;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JMForms_Example/Pods-JMForms_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -876,20 +878,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3CE451FFB3FAAB6A4D5A84D908671D81 /* Build configuration list for PBXNativeTarget "JMForms" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B9B0A6A6F781AE5FB0AC942B7D36EB4 /* Debug */,
-				F4A92E6B96C3680718BA24A03EE876C9 /* Release */,
+				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
+				1422B121EAEAEA11307496903FA623C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+		512E24CD58E37757151B565E3B2D0A9F /* Build configuration list for PBXNativeTarget "JMForms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
-				B0087CB4594321EF41619F3181FE120E /* Release */,
+				D3D952A74892123D7B5C51C626A20B16 /* Debug */,
+				08DF0B9FD6D63B33106583EC3D1BD47E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -897,8 +899,8 @@
 		69D57BC474BE6F26CFFCE29192EBBDF4 /* Build configuration list for PBXNativeTarget "Pods-JMForms_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53542186A0EF063F24ACA46CC300A6BB /* Debug */,
-				57D7CAF9DAF8FAAA2488E12ACDAD95FD /* Release */,
+				809084F7585CB5FD58733113087CBA4B /* Debug */,
+				EEBAA06F2AE6C60479B85EE2984967F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -906,8 +908,8 @@
 		BF537ACD5F61C703A7399CC583EEBF79 /* Build configuration list for PBXNativeTarget "Pods-JMForms_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5745F7A3BE5E30D453711E1CBDEC6DED /* Debug */,
-				1B870E0AA9E32364E5BA214EC29A169B /* Release */,
+				97FAB9A173B87EEDA0E6B5BC70648BDE /* Debug */,
+				3E0AC3F8120736B663747C03AD7A6886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

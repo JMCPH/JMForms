@@ -119,12 +119,8 @@ open class JMFormTextFieldCell: JMFormTableViewCell, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension JMFormTextFieldCell: JMFormUpdatable {
-    
-    public func update(withForm item: JMFormItem) {
-        self.item = item
+    public override func update(withForm item: JMFormItem) {
+        super.update(withForm: item)
         self.item?.delegate = self
         
         // Setup the text to be the value of the item
@@ -133,6 +129,7 @@ extension JMFormTextFieldCell: JMFormUpdatable {
         // Update the UI based on Appearence
         textField.font = item.appearance.titleFont
         textField.textColor = item.appearance.titleColor
+        textField.backgroundColor = item.appearance.fieldBackgroundColor
         
         // Setup the UI of the textfield
         setupTextFieldUI()
