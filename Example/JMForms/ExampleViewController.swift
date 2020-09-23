@@ -17,7 +17,7 @@ public struct JMFormItemAppearanceTiimo: JMFormItemAppearance {
     
     public var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0)
     
-    public var backgroundColor: UIColor = .clear
+    public var contentBackgroundColor: UIColor = .clear
     
     public var fieldBackgroundColor: UIColor = .white
     

@@ -35,7 +35,7 @@ open class JMFormTableViewCell: UITableViewCell, JMFormCell, JMFormUpdatable {
     
     open func update(withForm item: JMFormItem) {
         self.item = item
-        backgroundColor = item.appearance.backgroundColor
+        backgroundColor = item.appearance.contentBackgroundColor
     }
     
     deinit {
