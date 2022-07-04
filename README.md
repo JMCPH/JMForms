@@ -8,7 +8,7 @@
 # JMForms - Simple form builder
 
 JMForms is a form builder written in Swift 5 📝 <br />
-The form was originally used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328), but is not replaced and i will soon archive this repo.
+The form was originally developed for the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328). In 2021 we changed the way activities is created and is therefor not being used anymore. I will soon archive this repo.
 
 ![alt text](https://github.com/JMCPH/JMForms/blob/master/Screenshots/screenshot1.gif)
 
