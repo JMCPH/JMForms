@@ -8,7 +8,7 @@
 # JMForms - Simple form builder
 
 JMForms is a form builder written in Swift 5 📝 <br />
-The framework is currently used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328).
+The form was originally used in the [Tiimo | The ADHD & autism app](https://apps.apple.com/dk/app/tiimo-the-adhd-autism-app/id1480220328), but is have not been used since 2021. I will soon archive this repo.
 
 ![alt text](https://github.com/JMCPH/JMForms/blob/master/Screenshots/screenshot1.gif)
 
@@ -29,9 +29,6 @@ The framework is currently used in the [Tiimo | The ADHD & autism app](https://a
 
 
 ## Usage example - Coming soon...
-
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
-
 
 ##### JMFormItemTypes
 - UITextField
